@@ -22,6 +22,7 @@
 		62B2F522167713CB00D8D130 /* BBResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F521167713CB00D8D130 /* BBResultTableViewController.m */; };
 		62B2F5251677141100D8D130 /* BBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F5241677141100D8D130 /* BBDetailViewController.m */; };
 		62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F52716771CDB00D8D130 /* BBBookResultCell.m */; };
+		62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		62B2F52716771CDB00D8D130 /* BBBookResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBookResultCell.m; path = Cells/BBBookResultCell.m; sourceTree = "<group>"; };
 		62B2F58C167722E600D8D130 /* AppDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDefines.h; sourceTree = "<group>"; };
 		62B2F58D1677233200D8D130 /* AppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommon.h; sourceTree = "<group>"; };
+		62B2F59516772FD100D8D130 /* BBDemoAFNetworkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoAFNetworkingViewController.h; sourceTree = "<group>"; };
+		62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoAFNetworkingViewController.m; sourceTree = "<group>"; };
 		87F4C6BA883541BBAF6AE0A5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C0742E63E87F4EEA8601DCD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -151,6 +154,8 @@
 				62B2F521167713CB00D8D130 /* BBResultTableViewController.m */,
 				62B2F5231677141100D8D130 /* BBDetailViewController.h */,
 				62B2F5241677141100D8D130 /* BBDetailViewController.m */,
+				62B2F59516772FD100D8D130 /* BBDemoAFNetworkingViewController.h */,
+				62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				62B2F522167713CB00D8D130 /* BBResultTableViewController.m in Sources */,
 				62B2F5251677141100D8D130 /* BBDetailViewController.m in Sources */,
 				62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */,
+				62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
