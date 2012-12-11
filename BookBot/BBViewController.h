@@ -10,4 +10,7 @@
 
 @interface BBViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+
 @end
