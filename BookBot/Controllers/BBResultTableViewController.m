@@ -69,7 +69,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *reuseIdentifier = @"BBBookResultCell";
-    BBBookResultCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    BBBookResultCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     cell.itemText = [_resultData objectAtIndex:indexPath.row];
     [cell refreshUI];
     return cell;
