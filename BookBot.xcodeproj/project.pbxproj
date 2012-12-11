@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1AEA47F3C2E6429AB65213ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0742E63E87F4EEA8601DCD5 /* libPods.a */; };
+		62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C407167785BD0023C71E /* Default-568h@2x.png */; };
+		62A7C40B167785BD0023C71E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C408167785BD0023C71E /* Default.png */; };
+		62A7C40C167785BD0023C71E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C409167785BD0023C71E /* Default@2x.png */; };
 		62B2F4F21677037100D8D130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2F4F11677037100D8D130 /* UIKit.framework */; };
 		62B2F4F41677037100D8D130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2F4F31677037100D8D130 /* Foundation.framework */; };
 		62B2F4F61677037100D8D130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B2F4F51677037100D8D130 /* CoreGraphics.framework */; };
 		62B2F4FC1677037100D8D130 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62B2F4FA1677037100D8D130 /* InfoPlist.strings */; };
 		62B2F4FE1677037100D8D130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F4FD1677037100D8D130 /* main.m */; };
 		62B2F5021677037100D8D130 /* BBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F5011677037100D8D130 /* BBAppDelegate.m */; };
-		62B2F5041677037100D8D130 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B2F5031677037100D8D130 /* Default.png */; };
-		62B2F5061677037100D8D130 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B2F5051677037100D8D130 /* Default@2x.png */; };
-		62B2F5081677037100D8D130 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62B2F5071677037100D8D130 /* Default-568h@2x.png */; };
 		62B2F50B1677037100D8D130 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B2F5091677037100D8D130 /* MainStoryboard.storyboard */; };
 		62B2F50E1677037100D8D130 /* BBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F50D1677037100D8D130 /* BBViewController.m */; };
 		62B2F522167713CB00D8D130 /* BBResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F521167713CB00D8D130 /* BBResultTableViewController.m */; };
@@ -27,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62A7C407167785BD0023C71E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		62A7C408167785BD0023C71E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		62A7C409167785BD0023C71E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		62B2F4ED1677037100D8D130 /* BookBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B2F4F11677037100D8D130 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		62B2F4F31677037100D8D130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,9 +40,6 @@
 		62B2F4FF1677037100D8D130 /* BookBot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BookBot-Prefix.pch"; sourceTree = "<group>"; };
 		62B2F5001677037100D8D130 /* BBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBAppDelegate.h; path = ../BBAppDelegate.h; sourceTree = "<group>"; };
 		62B2F5011677037100D8D130 /* BBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BBAppDelegate.m; path = ../BBAppDelegate.m; sourceTree = "<group>"; };
-		62B2F5031677037100D8D130 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		62B2F5051677037100D8D130 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		62B2F5071677037100D8D130 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		62B2F50A1677037100D8D130 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		62B2F50C1677037100D8D130 /* BBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBViewController.h; path = ../BBViewController.h; sourceTree = "<group>"; };
 		62B2F50D1677037100D8D130 /* BBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BBViewController.m; path = ../BBViewController.m; sourceTree = "<group>"; };
@@ -140,10 +140,10 @@
 		62B2F51D1677094100D8D130 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62A7C407167785BD0023C71E /* Default-568h@2x.png */,
+				62A7C408167785BD0023C71E /* Default.png */,
+				62A7C409167785BD0023C71E /* Default@2x.png */,
 				62B2F5091677037100D8D130 /* MainStoryboard.storyboard */,
-				62B2F5031677037100D8D130 /* Default.png */,
-				62B2F5051677037100D8D130 /* Default@2x.png */,
-				62B2F5071677037100D8D130 /* Default-568h@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -236,10 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B2F4FC1677037100D8D130 /* InfoPlist.strings in Resources */,
-				62B2F5041677037100D8D130 /* Default.png in Resources */,
-				62B2F5061677037100D8D130 /* Default@2x.png in Resources */,
-				62B2F5081677037100D8D130 /* Default-568h@2x.png in Resources */,
 				62B2F50B1677037100D8D130 /* MainStoryboard.storyboard in Resources */,
+				62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */,
+				62A7C40B167785BD0023C71E /* Default.png in Resources */,
+				62A7C40C167785BD0023C71E /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
