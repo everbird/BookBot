@@ -1,7 +1,10 @@
 ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -framework MobileCoreServices -framework SystemConfiguration
+OTHER_LDFLAGS = -ObjC -liconv -framework AVFoundation -framework CoreGraphics -framework CoreMedia -framework CoreVideo -framework MobileCoreServices -framework QuartzCore -framework SystemConfiguration
 HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
 PODS_ROOT = ${SRCROOT}/Pods
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/JSONKit"
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/JSONKit"
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/AFNetworking" "${PODS_ROOT}/BuildHeaders/JSONKit" "${PODS_ROOT}/BuildHeaders/ZBarSDK" "${PODS_ROOT}/BuildHeaders/include" "${PODS_ROOT}/BuildHeaders/ZBarSDK/decoder" "${PODS_ROOT}/BuildHeaders/ZBarSDK/processor" "${PODS_ROOT}/BuildHeaders/ZBarSDK/qrcode" "${PODS_ROOT}/BuildHeaders/ZBarSDK/window" "${PODS_ROOT}/BuildHeaders/iphone" "${PODS_ROOT}/BuildHeaders/iphone/include" "${PODS_ROOT}/BuildHeaders/iphone/include/ZBarSDK"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/JSONKit" "${PODS_ROOT}/Headers/ZBarSDK" "${PODS_ROOT}/Headers/include" "${PODS_ROOT}/Headers/ZBarSDK/decoder" "${PODS_ROOT}/Headers/ZBarSDK/processor" "${PODS_ROOT}/Headers/ZBarSDK/qrcode" "${PODS_ROOT}/Headers/ZBarSDK/window" "${PODS_ROOT}/Headers/iphone" "${PODS_ROOT}/Headers/iphone/include" "${PODS_ROOT}/Headers/iphone/include/ZBarSDK"
 PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
+EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*] = ZBarReaderViewImpl_Simulator.m
+EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*] = ZBarReaderViewImpl_Capture.m ZBarCaptureReader.m
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) NDEBUG=1
