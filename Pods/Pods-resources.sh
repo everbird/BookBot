@@ -21,3 +21,7 @@ install_resource()
       ;;
   esac
 }
+install_resource 'ZBarSDK/iphone/res/zbar-back.png'
+install_resource 'ZBarSDK/iphone/res/zbar-helpicons.png'
+install_resource 'ZBarSDK/iphone/res/zbar-samples.png'
+install_resource 'ZBarSDK/iphone/res/zbar-help.html'

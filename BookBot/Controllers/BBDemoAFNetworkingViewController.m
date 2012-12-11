@@ -29,6 +29,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+
 - (IBAction)doFetch:(id)sender {
     NSURL *url = [[NSURL alloc] initWithString:@"https://api.douban.com/v2/book/isbn/9781593273880?apikey=07d7b27cc7c0ea1b178717765742be51"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
