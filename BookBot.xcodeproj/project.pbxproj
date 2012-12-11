@@ -23,6 +23,7 @@
 		62B2F5251677141100D8D130 /* BBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F5241677141100D8D130 /* BBDetailViewController.m */; };
 		62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F52716771CDB00D8D130 /* BBBookResultCell.m */; };
 		62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */; };
+		62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		62B2F58D1677233200D8D130 /* AppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommon.h; sourceTree = "<group>"; };
 		62B2F59516772FD100D8D130 /* BBDemoAFNetworkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoAFNetworkingViewController.h; sourceTree = "<group>"; };
 		62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoAFNetworkingViewController.m; sourceTree = "<group>"; };
+		62B2F5A916773FA700D8D130 /* BBDemoZBarSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoZBarSDKViewController.h; sourceTree = "<group>"; };
+		62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoZBarSDKViewController.m; sourceTree = "<group>"; };
 		87F4C6BA883541BBAF6AE0A5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C0742E63E87F4EEA8601DCD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +159,8 @@
 				62B2F5241677141100D8D130 /* BBDetailViewController.m */,
 				62B2F59516772FD100D8D130 /* BBDemoAFNetworkingViewController.h */,
 				62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */,
+				62B2F5A916773FA700D8D130 /* BBDemoZBarSDKViewController.h */,
+				62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				62B2F5251677141100D8D130 /* BBDetailViewController.m in Sources */,
 				62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */,
 				62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */,
+				62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +323,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -338,7 +344,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
