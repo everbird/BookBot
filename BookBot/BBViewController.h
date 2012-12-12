@@ -10,13 +10,12 @@
 
 @interface BBViewController : UIViewController
 {
-    UISearchDisplayController *searchDisplayController;
-    UISearchDisplayController *searchBar;
     NSArray *searchHistory;
     NSArray *matchedHistory;
 }
 
 @property (nonatomic, retain) IBOutlet UISearchDisplayController *searchDisplayController;
-@property (nonatomic, retain) IBOutlet UISearchDisplayController *searchBar;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+
 
 @end

@@ -18,7 +18,6 @@
 @implementation BBViewController
 
 @synthesize searchDisplayController;
-@synthesize searchBar;
 
 - (void)viewDidLoad
 {
@@ -47,8 +46,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"prepare");
     BBResultTableViewController* dest = [segue destinationViewController];
-    dest.searchText = searchBar.searchBar.text;
+    dest.searchText = _searchBar.text;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -96,6 +96,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     searchDisplayController.searchBar.text = cell.textLabel.text;
     //TODO: do search
+    //[self performSegueWithIdentifier:@"results" sender:self];
 }
 
 - (void)searchBar:(UISearchBar *)aSearchBar textDidChange:(NSString *)searchText
@@ -140,4 +141,8 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
     return YES;
 }
 
+- (void)viewDidUnload {
+    [self setSearchBar:nil];
+    [super viewDidUnload];
+}
 @end
