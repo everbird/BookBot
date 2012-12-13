@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BBResultTableViewController : UITableViewController {
-    NSArray* _mockedData;
 }
 
 @property (copy, nonatomic) NSString* searchText;
