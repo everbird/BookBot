@@ -129,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="-724" y="31"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Search-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="BBViewController" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gzt-qJ-qpS"/>
+                    <navigationItem key="navigationItem" title="Search" id="gBc-af-i77"/>
                     <connections>
                         <outlet property="searchBar" destination="gNT-z2-eii" id="L1c-gC-9Au"/>
                         <outlet property="searchDisplayController" destination="pgc-Ys-vQz" id="diY-yX-HMR"/>
@@ -175,7 +175,7 @@
             </objects>
             <point key="canvasLocation" x="-275" y="31"/>
         </scene>
-        <!--Result Table View Controller - Results-->
+        <!--Result Table View Controller-->
         <scene sceneID="QJI-nF-x8t">
             <objects>
                 <tableViewController id="k5a-Aq-faK" customClass="BBResultTableViewController" sceneMemberID="viewController">
@@ -216,7 +216,6 @@
                             <outlet property="delegate" destination="k5a-Aq-faK" id="Lqc-ZB-961"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Results" id="mDf-Nb-mrs"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTm-As-jbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,8 +275,9 @@
         <class className="BBViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doFetch:" candidateClass="NSString"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="searchDisplayController" candidateClass="UISearchDisplayController"/>
+                <relationship kind="outlet" name="uiSearchDisplayController" candidateClass="UISearchDisplayController"/>
             </relationships>
         </class>
     </classes>

@@ -14,7 +14,7 @@
     NSArray *matchedHistory;
 }
 
-@property (nonatomic, retain) IBOutlet UISearchDisplayController *searchDisplayController;
+@property (nonatomic, strong) IBOutlet UISearchDisplayController *uiSearchDisplayController;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 
 
