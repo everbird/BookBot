@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface BBViewController : UIViewController
+{
+    NSArray *searchHistory;
+    NSArray *matchedHistory;
+}
 
-@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
-@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (nonatomic, strong) IBOutlet UISearchDisplayController *uiSearchDisplayController;
+@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+
 
 @end

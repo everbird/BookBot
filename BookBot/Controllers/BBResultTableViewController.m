@@ -5,9 +5,9 @@
 //  Created by everbird on 12/11/12.
 //  Copyright (c) 2012 Douban.com Inc. All rights reserved.
 //
+#import <JSONKit/JSONKit.h>
 
 #import "BBResultTableViewController.h"
-
 #import "BBBookResultCell.h"
 #import "BBDetailViewController.h"
 #import "AppCommon.h"
@@ -23,21 +23,12 @@
 {
     [super viewDidLoad];
     
-    _mockedData = @[
-        @"Apple",
-        @"Google",
-        @"Amazon",
-        @"Facebook",
-        @"Twitter",
-        @"Yahoo",
-    ];
-    
-    _resultData = [[NSMutableArray alloc] initWithCapacity:[_mockedData count]];
-    for (NSString* item in _mockedData) {
-        if (NSNotFound != [item rangeOfString:_searchText].location) {
-            [_resultData addObject:item];
-        }
-    }
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(backToSearch)];
+    self.navigationItem.leftBarButtonItem = leftBarButton;
+}
+
+- (void)backToSearch{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,9 +61,15 @@
 {
     static NSString *reuseIdentifier = @"BBBookResultCell";
     BBBookResultCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell = [[BBBookResultCell alloc] init];
+    }
     cell.itemText = [_resultData objectAtIndex:indexPath.row];
     [cell refreshUI];
     return cell;
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 @end
