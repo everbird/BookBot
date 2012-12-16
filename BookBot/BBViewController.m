@@ -23,7 +23,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
 
     //TODO: get search history
     NSArray *mockHistory = @[
@@ -46,6 +45,13 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (ISINSTANCE(sender, UITableViewCell)) {
@@ -53,6 +59,8 @@
         dest.searchText = _searchBar.text;
     }
 }
+
+#pragma mark - UITableViewController delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -75,10 +83,7 @@
                              dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
@@ -107,16 +112,6 @@
     NSLog(@"search text change: %@", searchText);
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar
-{
-    
-}
-
-- (IBAction)doFetch:(NSString *)query
-{
-
-}
-
 - (void)filterContentForSearchText:(NSString*)searchText
                              scope:(NSString*)scope
 {
@@ -128,6 +123,7 @@
 
 
 #pragma mark - UISearchDisplayController delegate methods
+
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller
 shouldReloadTableForSearchString:(NSString *)searchString
 {

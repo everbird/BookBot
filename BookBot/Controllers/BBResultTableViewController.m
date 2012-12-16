@@ -10,6 +10,7 @@
 
 #import <JSONKit/JSONKit.h>
 #import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #import "BBBookResultCell.h"
 #import "BBDetailViewController.h"
@@ -17,6 +18,8 @@
 
 
 @interface BBResultTableViewController ()
+
+- (void)doSearch:(NSString*)searchText;
 
 @end
 
@@ -27,31 +30,7 @@
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
-    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&apikey=07d7b27cc7c0ea1b178717765742be51", _searchText];
-    NSURL *url = [[NSURL alloc] initWithString:apiString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
-    {
-        NSDictionary *r = JSON;
-        NSArray *books = [r objectForKey:@"books"];
-        
-        NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:[books count]];
-        for (NSDictionary *book in books)
-        {
-            [titles addObject:[book objectForKey:@"title"]];
-        }
-        
-        // TODO: show titles
-        self.resultData = titles;
-        
-        [self.tableView reloadData];
-        
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
-    {
-        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-    }];
-    
-    [operation start];
+    [self doSearch:_searchText];
 }
 
 - (void)backToSearch{
@@ -96,7 +75,38 @@
     return cell;
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+#pragma mark - Private
+
+- (void)doSearch:(NSString*)searchText
+{
+    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&apikey=07d7b27cc7c0ea1b178717765742be51", searchText];
+    NSURL *url = [[NSURL alloc] initWithString:apiString];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    {
+        NSDictionary *r = JSON;
+        NSArray *books = [r objectForKey:@"books"];
+        
+        NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:[books count]];
+        for (NSDictionary *book in books)
+        {
+            [titles addObject:[book objectForKey:@"title"]];
+        }
+        
+        self.resultData = titles;
+        
+        [self.tableView reloadData];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    {
+        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+    }];
+    
+    [operation start];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
+
 @end
