@@ -5,11 +5,11 @@
 //  Created by everbird on 12/11/12.
 //  Copyright (c) 2012 Douban.com Inc. All rights reserved.
 //
-#import <AFNetworking/AFNetworking.h>
-#import <JSONKit/JSONKit.h>
 
 #import "BBViewController.h"
+
 #import "BBResultTableViewController.h"
+#import "AppCommon.h"
 
 
 @interface BBViewController ()
@@ -44,6 +44,14 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (ISINSTANCE(sender, UITableViewCell)) {
+        BBResultTableViewController* dest = [segue destinationViewController];
+        dest.searchText = _searchBar.text;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -90,7 +98,8 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     _searchBar.text = cell.textLabel.text;
-    [self searchBarSearchButtonClicked:_searchBar];
+    [_searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"SearchToResult" sender:cell];
 }
 
 - (void)searchBar:(UISearchBar *)aSearchBar textDidChange:(NSString *)searchText
@@ -100,35 +109,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar
 {
-    [aSearchBar resignFirstResponder];
     
-    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&apikey=07d7b27cc7c0ea1b178717765742be51", aSearchBar.text];
-    NSURL *url = [[NSURL alloc] initWithString:apiString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
-    {
-        //NSLog(@"%@", JSON);
-        NSDictionary *r = JSON;
-        NSArray *books = [r objectForKey:@"books"];
-        
-        NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:[books count]];
-        for (NSDictionary *book in books)
-        {
-            [titles addObject:[book objectForKey:@"title"]];
-        }
-        
-        BBResultTableViewController *controller = [[BBResultTableViewController alloc] init];
-        controller.searchText = aSearchBar.text;
-        controller.resultData = titles;
-        UINavigationController *navController=[[UINavigationController alloc] initWithRootViewController:controller];
-        [self presentModalViewController:navController animated:YES];
-                                             
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
-    {
-        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
-    }];
-    
-    [operation start];
 }
 
 - (IBAction)doFetch:(NSString *)query
