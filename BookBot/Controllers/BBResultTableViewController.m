@@ -5,15 +5,21 @@
 //  Created by everbird on 12/11/12.
 //  Copyright (c) 2012 Douban.com Inc. All rights reserved.
 //
-#import <JSONKit/JSONKit.h>
 
 #import "BBResultTableViewController.h"
+
+#import <JSONKit/JSONKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+
 #import "BBBookResultCell.h"
 #import "BBDetailViewController.h"
 #import "AppCommon.h"
 
 
 @interface BBResultTableViewController ()
+
+- (void)doSearch:(NSString*)searchText;
 
 @end
 
@@ -22,9 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
-    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(backToSearch)];
-    self.navigationItem.leftBarButtonItem = leftBarButton;
+    [self doSearch:_searchText];
 }
 
 - (void)backToSearch{
@@ -69,7 +75,38 @@
     return cell;
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
+#pragma mark - Private
+
+- (void)doSearch:(NSString*)searchText
+{
+    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&apikey=07d7b27cc7c0ea1b178717765742be51", searchText];
+    NSURL *url = [[NSURL alloc] initWithString:apiString];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    {
+        NSDictionary *r = JSON;
+        NSArray *books = [r objectForKey:@"books"];
+        
+        NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:[books count]];
+        for (NSDictionary *book in books)
+        {
+            [titles addObject:[book objectForKey:@"title"]];
+        }
+        
+        self.resultData = titles;
+        
+        [self.tableView reloadData];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    {
+        NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);
+    }];
+    
+    [operation start];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
+
 @end
