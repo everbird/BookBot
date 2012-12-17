@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    self.navigationItem.title = _searchText;
     
     [self doSearch:_searchText];
 }

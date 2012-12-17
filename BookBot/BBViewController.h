@@ -10,7 +10,7 @@
 
 @interface BBViewController : UIViewController
 {
-    NSArray *searchHistory;
+    NSMutableArray *searchHistory;
     NSArray *matchedHistory;
 }
 

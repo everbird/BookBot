@@ -23,21 +23,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    //TODO: get search history
-    NSArray *mockHistory = @[
-        @"Apple",
-        @"Google",
-        @"Amazon",
-        @"Facebook",
-        @"Twitter",
-        @"Yahoo",
-        @"java",
-        @"javascript",
-        @"python",
-        @"objective-c",
-    ];
-    searchHistory = mockHistory;
+    
+    NSMutableDictionary *categoryList = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/search_history.plist"];
+    NSMutableArray *array =(NSMutableArray *) [categoryList valueForKey:@"searchHistory"];
+    searchHistory = [[NSMutableArray alloc] init];
+    for (NSString *s in array)
+    {
+        [searchHistory addObject:s];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,12 +45,19 @@
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    NSString *location = [directory stringByAppendingString:@"/search_history.plist"];
+    [searchHistory writeToFile:location atomically:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (ISINSTANCE(sender, UITableViewCell)) {
-        BBResultTableViewController* dest = [segue destinationViewController];
-        dest.searchText = _searchBar.text;
-    }
+    BBResultTableViewController* dest = [segue destinationViewController];
+    dest.searchText = _searchBar.text;
+    [searchHistory addObject:dest.searchText];
 }
 
 #pragma mark - UITableViewController delegate methods
@@ -107,9 +107,9 @@
     [self performSegueWithIdentifier:@"SearchToResult" sender:cell];
 }
 
-- (void)searchBar:(UISearchBar *)aSearchBar textDidChange:(NSString *)searchText
-{
-    NSLog(@"search text change: %@", searchText);
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"SearchToResult" sender:self];
 }
 
 - (void)filterContentForSearchText:(NSString*)searchText
