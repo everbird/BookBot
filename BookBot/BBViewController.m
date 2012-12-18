@@ -23,21 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    //TODO: get search history
-    NSArray *mockHistory = @[
-        @"Apple",
-        @"Google",
-        @"Amazon",
-        @"Facebook",
-        @"Twitter",
-        @"Yahoo",
-        @"java",
-        @"javascript",
-        @"python",
-        @"objective-c",
-    ];
-    searchHistory = mockHistory;
+    
+    NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:@"/search_history.plist"];
+    searchHistory = [[NSMutableArray alloc] initWithArray:array];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,12 +40,23 @@
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
+- (void)saveHistory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    NSString *location = [directory stringByAppendingString:@"/search_history.plist"];
+    [searchHistory writeToFile:location atomically:YES];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (ISINSTANCE(sender, UITableViewCell)) {
-        BBResultTableViewController* dest = [segue destinationViewController];
-        dest.searchText = _searchBar.text;
+    BBResultTableViewController* dest = [segue destinationViewController];
+    dest.searchText = _searchBar.text;
+    if(![searchHistory containsObject:dest.searchText])
+    {
+        [searchHistory addObject:dest.searchText];
     }
+    [self saveHistory];
 }
 
 #pragma mark - UITableViewController delegate methods
@@ -107,9 +106,9 @@
     [self performSegueWithIdentifier:@"SearchToResult" sender:cell];
 }
 
-- (void)searchBar:(UISearchBar *)aSearchBar textDidChange:(NSString *)searchText
-{
-    NSLog(@"search text change: %@", searchText);
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"SearchToResult" sender:self];
 }
 
 - (void)filterContentForSearchText:(NSString*)searchText
