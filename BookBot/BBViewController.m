@@ -24,13 +24,8 @@
 {
     [super viewDidLoad];
     
-    NSMutableDictionary *categoryList = [[NSMutableDictionary alloc] initWithContentsOfFile:@"/search_history.plist"];
-    NSMutableArray *array =(NSMutableArray *) [categoryList valueForKey:@"searchHistory"];
-    searchHistory = [[NSMutableArray alloc] init];
-    for (NSString *s in array)
-    {
-        [searchHistory addObject:s];
-    }
+    NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:@"/search_history.plist"];
+    searchHistory = [[NSMutableArray alloc] initWithArray:array];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +40,7 @@
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)saveHistory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *directory = [paths objectAtIndex:0];
@@ -57,7 +52,11 @@
 {
     BBResultTableViewController* dest = [segue destinationViewController];
     dest.searchText = _searchBar.text;
-    [searchHistory addObject:dest.searchText];
+    if(![searchHistory containsObject:dest.searchText])
+    {
+        [searchHistory addObject:dest.searchText];
+    }
+    [self saveHistory];
 }
 
 #pragma mark - UITableViewController delegate methods
