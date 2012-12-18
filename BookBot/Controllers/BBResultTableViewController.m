@@ -48,7 +48,7 @@
     if (ISINSTANCE(sender, BBBookResultCell)) {
         BBBookResultCell* resultCell = (BBBookResultCell*)sender;
         BBDetailViewController* dest = [segue destinationViewController];
-        dest.itemText = resultCell.itemText;
+        dest.itemText = resultCell.textLabel.text;
     }
 }
 
@@ -71,7 +71,11 @@
     if (!cell) {
         cell = [[BBBookResultCell alloc] init];
     }
-    cell.itemText = [_resultData objectAtIndex:indexPath.row];
+    cell = [_resultData objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = cell.title;
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:cell.coverUrl]]];
+
     [cell refreshUI];
     return cell;
 }
@@ -88,13 +92,17 @@
         NSDictionary *r = JSON;
         NSArray *books = [r objectForKey:@"books"];
         
-        NSMutableArray *titles = [[NSMutableArray alloc] initWithCapacity:[books count]];
+        _resultData = [[NSMutableArray alloc] initWithCapacity:[books count]];
+        
         for (NSDictionary *book in books)
         {
-            [titles addObject:[book objectForKey:@"title"]];
+            BBBookResultCell *cell = [[BBBookResultCell alloc] init];
+            cell.title = [book objectForKey:@"title"];
+            cell.author = [[book objectForKey:@"author"] componentsJoinedByString:@","];
+            cell.coverUrl = [book objectForKey:@"image"];
+            
+            [_resultData addObject:cell];
         }
-        
-        self.resultData = titles;
         
         [self.tableView reloadData];
         

@@ -28,7 +28,6 @@
 
 - (void)refreshUI
 {
-    self.textLabel.text = _itemText;
 }
 
 @end
