@@ -10,6 +10,7 @@
 
 #import <JSONKit/JSONKit.h>
 #import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
 #import "BBBookResultCell.h"
@@ -71,11 +72,10 @@
     if (!cell) {
         cell = [[BBBookResultCell alloc] init];
     }
-    cell = [_resultData objectAtIndex:indexPath.row];
+    NSDictionary *book = [_resultData objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = cell.title;
-    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:cell.coverUrl]]];
-
+    cell.textLabel.text = [book objectForKey:@"title"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
     [cell refreshUI];
     return cell;
 }
@@ -96,12 +96,7 @@
         
         for (NSDictionary *book in books)
         {
-            BBBookResultCell *cell = [[BBBookResultCell alloc] init];
-            cell.title = [book objectForKey:@"title"];
-            cell.author = [[book objectForKey:@"author"] componentsJoinedByString:@","];
-            cell.coverUrl = [book objectForKey:@"image"];
-            
-            [_resultData addObject:cell];
+            [_resultData addObject:book];
         }
         
         [self.tableView reloadData];
