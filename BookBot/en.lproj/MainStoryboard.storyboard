@@ -129,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="-724" y="31"/>
         </scene>
-        <!--View Controller - Search-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="BBViewController" sceneMemberID="viewController">
@@ -148,7 +148,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="gBc-af-i77"/>
+                    <navigationItem key="navigationItem" id="gBc-af-i77"/>
                     <connections>
                         <outlet property="searchBar" destination="gNT-z2-eii" id="L1c-gC-9Au"/>
                         <outlet property="searchDisplayController" destination="pgc-Ys-vQz" id="diY-yX-HMR"/>
@@ -247,42 +247,6 @@
             <point key="canvasLocation" x="617" y="31"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BBBookResultCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBBookResultCell.h"/>
-        </class>
-        <class className="BBDemoAFNetworkingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBDemoAFNetworkingViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doFetch:"/>
-                <relationship kind="outlet" name="fetchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="resultTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="BBDemoZBarSDKViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBDemoZBarSDKViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doScan:"/>
-                <relationship kind="outlet" name="resultISBNLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="resultImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scanButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="BBDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBDetailViewController.h"/>
-        </class>
-        <class className="BBResultTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBResultTableViewController.h"/>
-        </class>
-        <class className="BBViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doFetch:" candidateClass="NSString"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="uiSearchDisplayController" candidateClass="UISearchDisplayController"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

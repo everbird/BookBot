@@ -10,7 +10,10 @@
 
 @interface BBBookResultCell : UITableViewCell
 
-@property (copy, nonatomic) NSString* itemText;
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *author;
+@property (copy, nonatomic) NSString *coverUrl;
+
 
 - (void)refreshUI;
 
