@@ -49,7 +49,7 @@
     if (ISINSTANCE(sender, BBBookResultCell)) {
         BBBookResultCell* resultCell = (BBBookResultCell*)sender;
         BBDetailViewController* dest = [segue destinationViewController];
-        dest.itemText = resultCell.textLabel.text;
+        dest.itemText = resultCell.mTitle.text;
     }
 }
 
@@ -74,9 +74,11 @@
     }
     NSDictionary *book = [_resultData objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [book objectForKey:@"title"];
-    [cell.imageView setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
-    [cell refreshUI];
+    cell.mTitle.text = [book objectForKey:@"title"];
+    cell.mAuthor.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
+    cell.mDesc.text = [book objectForKey:@"summary"];
+    [cell.mDesc sizeToFit];
+    [cell.mCover setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
     return cell;
 }
 
@@ -111,6 +113,11 @@
     [operation start];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 110;
 }
 
 @end
