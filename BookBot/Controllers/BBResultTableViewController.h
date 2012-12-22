@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BBResultTableViewController : UITableViewController {
-}
+@interface BBResultTableViewController : UITableViewController
 
 @property (copy, nonatomic) NSString* searchText;
 @property (strong, nonatomic) NSMutableArray* resultData;
