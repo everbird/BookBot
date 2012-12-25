@@ -34,14 +34,7 @@
         assitCell = [[UITableViewCell alloc] init];
         assitCell.textLabel.textAlignment = UITextAlignmentCenter;
     }
-    if (_resultTotal < 0)
-    {
-        assitCell.hidden = YES;
-    }
-    else
-    {
-        assitCell.hidden = NO;
-    }
+    assitCell.hidden = _resultTotal < 0;
     return assitCell;
 }
 
@@ -98,16 +91,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int currCnt = [_resultData count];
-    if (currCnt == 0)
+    int currentResultCount = [_resultData count];
+    if (currentResultCount == 0)
     {
         return 1;
     }
-    else if (currCnt < _resultTotal)
+    else if (currentResultCount < _resultTotal)
     {
-        return currCnt + 1;
+        return currentResultCount + 1;
     }
-    return currCnt;
+    return currentResultCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -167,11 +160,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == [_resultData count])
-    {
-        return 44;
-    }
-    return 110;
+    return (indexPath.row == [_resultData count])? 44 : 110;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
