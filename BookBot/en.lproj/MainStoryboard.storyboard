@@ -197,7 +197,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="BBBookResultCell" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SWY-Ku-2RM">
-                                            <rect key="frame" x="88" y="0.0" width="232" height="27"/>
+                                            <rect key="frame" x="88" y="0.0" width="212" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" none="YES"/>
@@ -209,7 +209,7 @@
                                             <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="authors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z6d-nn-df5">
-                                            <rect key="frame" x="88" y="25" width="226" height="21"/>
+                                            <rect key="frame" x="88" y="26" width="212" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.55360478940217384" green="0.55360478940217384" blue="0.55360478940217384" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,10 +226,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="mAuthor" destination="z6d-nn-df5" id="fZ5-ae-yue"/>
-                                    <outlet property="mCover" destination="dav-hn-lOz" id="Brv-JZ-xaA"/>
-                                    <outlet property="mDesc" destination="ZCE-nn-Ges" id="tUD-7P-KcE"/>
-                                    <outlet property="mTitle" destination="SWY-Ku-2RM" id="kbJ-xh-FMx"/>
+                                    <outlet property="authorLabel" destination="z6d-nn-df5" id="XtK-Lm-qkP"/>
+                                    <outlet property="coverImage" destination="dav-hn-lOz" id="Pbh-HN-YC5"/>
+                                    <outlet property="descLabel" destination="ZCE-nn-Ges" id="U31-Gb-aeS"/>
+                                    <outlet property="titleLabel" destination="SWY-Ku-2RM" id="Kko-KN-eBU"/>
                                     <segue destination="fWL-fa-zfP" kind="push" id="mF5-Xb-ImQ"/>
                                 </connections>
                             </tableViewCell>
@@ -273,10 +273,10 @@
         <class className="BBBookResultCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBBookResultCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="mAuthor" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mCover" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="mDesc" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="authorLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="coverImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="descLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="BBDemoAFNetworkingViewController" superclassName="UIViewController">

@@ -10,10 +10,10 @@
 
 @interface BBBookResultCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *mCover;
-@property (strong, nonatomic) IBOutlet UILabel *mTitle;
-@property (strong, nonatomic) IBOutlet UILabel *mAuthor;
-@property (strong, nonatomic) IBOutlet UILabel *mDesc;
+@property (strong, nonatomic) IBOutlet UIImageView *coverImage;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
+@property (strong, nonatomic) IBOutlet UILabel *descLabel;
 
 - (void)refreshUI;
 
