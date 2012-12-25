@@ -197,7 +197,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="BBBookResultCell" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SWY-Ku-2RM">
-                                            <rect key="frame" x="88" y="0.0" width="232" height="27"/>
+                                            <rect key="frame" x="88" y="0.0" width="212" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" none="YES"/>
@@ -209,7 +209,7 @@
                                             <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="authors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z6d-nn-df5">
-                                            <rect key="frame" x="88" y="25" width="226" height="21"/>
+                                            <rect key="frame" x="88" y="26" width="212" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.55360478940217384" green="0.55360478940217384" blue="0.55360478940217384" alpha="1" colorSpace="calibratedRGB"/>

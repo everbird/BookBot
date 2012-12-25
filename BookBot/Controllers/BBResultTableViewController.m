@@ -75,7 +75,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
     if (_resultTotal == 0)
     {
         UITableViewCell *cell = [[UITableViewCell alloc] init];
@@ -84,7 +83,6 @@
         cell.textLabel.text = @"No Result";
 		return cell;
     }
-     */
 
     if (indexPath.row == [_resultData count])
     {
@@ -104,9 +102,9 @@
     cell.titleLabel.text = [book objectForKey:@"title"];
     cell.authorLabel.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
     cell.descLabel.text = [book objectForKey:@"summary"];
-    [cell.descLabel sizeToFit];
     [cell.coverImage setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
 
+    [cell.descLabel sizeToFit];
     return cell;
 }
 
@@ -114,7 +112,7 @@
 
 - (void)doSearch:(NSString*)searchText start:(int) startIndex
 {
-    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&start=%d&apikey=07d7b27cc7c0ea1b178717765742be51", searchText, startIndex];
+    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&start=%d&apikey=07d7b27cc7c0ea1b178717765742be51", [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], startIndex];
     NSURL *url = [[NSURL alloc] initWithString:apiString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
