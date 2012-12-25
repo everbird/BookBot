@@ -20,8 +20,6 @@
 
 @interface BBResultTableViewController ()
 
-- (void)doSearch:(NSString*)searchText;
-
 @end
 
 @implementation BBResultTableViewController
@@ -31,8 +29,9 @@
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = _searchText;
+    _resultData = [[NSMutableArray alloc] init];
     
-    [self doSearch:_searchText];
+    [self doSearch:_searchText start:0];
 }
 
 - (void)backToSearch{
@@ -49,7 +48,7 @@
     if (ISINSTANCE(sender, BBBookResultCell)) {
         BBBookResultCell* resultCell = (BBBookResultCell*)sender;
         BBDetailViewController* dest = [segue destinationViewController];
-        dest.itemText = resultCell.mTitle.text;
+        dest.itemText = resultCell.titleLabel.text;
     }
 }
 
@@ -62,11 +61,39 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_resultData count];
+    int currCnt = [_resultData count];
+    if (currCnt == 0)
+    {
+        return 1;
+    }
+    else if (currCnt < _resultTotal)
+    {
+        return currCnt + 1;
+    }
+    return currCnt;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
+    if (_resultTotal == 0)
+    {
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.text = @"No Result";
+		return cell;
+    }
+     */
+
+    if (indexPath.row == [_resultData count])
+    {
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        cell.textLabel.text = @"Load More";
+        return cell;
+    }
+    
     static NSString *reuseIdentifier = @"BBBookResultCell";
     BBBookResultCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
@@ -74,32 +101,27 @@
     }
     NSDictionary *book = [_resultData objectAtIndex:indexPath.row];
     
-    cell.mTitle.text = [book objectForKey:@"title"];
-    cell.mAuthor.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
-    cell.mDesc.text = [book objectForKey:@"summary"];
-    [cell.mDesc sizeToFit];
-    [cell.mCover setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    cell.titleLabel.text = [book objectForKey:@"title"];
+    cell.authorLabel.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
+    cell.descLabel.text = [book objectForKey:@"summary"];
+    [cell.descLabel sizeToFit];
+    [cell.coverImage setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
+
     return cell;
 }
 
 #pragma mark - Private
 
-- (void)doSearch:(NSString*)searchText
+- (void)doSearch:(NSString*)searchText start:(int) startIndex
 {
-    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&apikey=07d7b27cc7c0ea1b178717765742be51", searchText];
+    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&start=%d&apikey=07d7b27cc7c0ea1b178717765742be51", searchText, startIndex];
     NSURL *url = [[NSURL alloc] initWithString:apiString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         NSDictionary *r = JSON;
-        NSArray *books = [r objectForKey:@"books"];
-        
-        _resultData = [[NSMutableArray alloc] initWithCapacity:[books count]];
-        
-        for (NSDictionary *book in books)
-        {
-            [_resultData addObject:book];
-        }
+        _resultTotal = [[r objectForKey:@"total"] intValue];
+        [_resultData addObjectsFromArray:[r objectForKey:@"books"]];
         
         [self.tableView reloadData];
         
@@ -117,7 +139,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == [_resultData count])
+    {
+        return 44;
+    }
     return 110;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == [_resultData count]) {
+        [self doSearch:_searchText start:[_resultData count]];
+    }
 }
 
 @end
