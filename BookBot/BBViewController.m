@@ -20,11 +20,24 @@
 
 //@synthesize searchDisplayController;
 
+- (NSString *)getPlistLocation
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *directory = [paths objectAtIndex:0];
+    NSString *location = [directory stringByAppendingString:@"/search_history.plist"];
+    return location;
+}
+
+- (void)saveHistory
+{
+    [searchHistory writeToFile:[self getPlistLocation] atomically:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:@"/search_history.plist"];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self getPlistLocation]];
     searchHistory = [[NSMutableArray alloc] initWithArray:array];
 }
 
@@ -38,14 +51,6 @@
     [super viewWillAppear:animated];
     
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)saveHistory
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *directory = [paths objectAtIndex:0];
-    NSString *location = [directory stringByAppendingString:@"/search_history.plist"];
-    [searchHistory writeToFile:location atomically:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
