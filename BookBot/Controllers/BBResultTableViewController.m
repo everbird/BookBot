@@ -19,10 +19,46 @@
 
 
 @interface BBResultTableViewController ()
+{
+    UITableViewCell *assitCell;
+}
 
 @end
 
 @implementation BBResultTableViewController
+
+- (UITableViewCell *)getAssitCell
+{
+    if (assitCell == nil)
+    {
+        assitCell = [[UITableViewCell alloc] init];
+        assitCell.textLabel.textAlignment = UITextAlignmentCenter;
+    }
+    if (_resultTotal < 0)
+    {
+        assitCell.hidden = YES;
+    }
+    else
+    {
+        assitCell.hidden = NO;
+    }
+    return assitCell;
+}
+
+- (UITableViewCell *)getNoResultCell
+{
+    UITableViewCell *noResultCell = [self getAssitCell];
+    noResultCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    noResultCell.textLabel.text = @"No Result";
+    return noResultCell;
+}
+
+- (UITableViewCell *)getLoadMoreCell
+{
+    UITableViewCell *loadMoreCell = [self getAssitCell];
+    loadMoreCell.textLabel.text = @"Load More";
+    return loadMoreCell;
+}
 
 - (void)viewDidLoad
 {
@@ -30,6 +66,7 @@
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = _searchText;
     _resultData = [[NSMutableArray alloc] init];
+    _resultTotal = -1;
     
     [self doSearch:_searchText start:0];
 }
@@ -77,19 +114,12 @@
 {
     if (_resultTotal == 0)
     {
-        UITableViewCell *cell = [[UITableViewCell alloc] init];
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.textLabel.text = @"No Result";
-		return cell;
+        return [self getNoResultCell];
     }
 
     if (indexPath.row == [_resultData count])
     {
-        UITableViewCell *cell = [[UITableViewCell alloc] init];
-        cell.textLabel.textAlignment = UITextAlignmentCenter;
-        cell.textLabel.text = @"Load More";
-        return cell;
+        return [self getLoadMoreCell];
     }
     
     static NSString *reuseIdentifier = @"BBBookResultCell";
@@ -145,7 +175,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == [_resultData count]) {
+    if ([_resultData count] == 0)
+    {
+        return;
+    }
+    if (indexPath.row == [_resultData count])
+    {
         [self doSearch:_searchText start:[_resultData count]];
     }
 }
