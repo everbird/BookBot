@@ -19,20 +19,49 @@
 
 
 @interface BBResultTableViewController ()
-
-- (void)doSearch:(NSString*)searchText;
+{
+    UITableViewCell *assitCell;
+}
 
 @end
 
 @implementation BBResultTableViewController
+
+- (UITableViewCell *)getAssitCell
+{
+    if (assitCell == nil)
+    {
+        assitCell = [[UITableViewCell alloc] init];
+        assitCell.textLabel.textAlignment = UITextAlignmentCenter;
+    }
+    assitCell.hidden = _resultTotal < 0;
+    return assitCell;
+}
+
+- (UITableViewCell *)getNoResultCell
+{
+    UITableViewCell *noResultCell = [self getAssitCell];
+    noResultCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    noResultCell.textLabel.text = @"No Result";
+    return noResultCell;
+}
+
+- (UITableViewCell *)getLoadMoreCell
+{
+    UITableViewCell *loadMoreCell = [self getAssitCell];
+    loadMoreCell.textLabel.text = @"Load More";
+    return loadMoreCell;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     self.navigationItem.title = _searchText;
+    _resultData = [[NSMutableArray alloc] init];
+    _resultTotal = -1;
     
-    [self doSearch:_searchText];
+    [self doSearch:_searchText start:0];
 }
 
 - (void)backToSearch{
@@ -49,7 +78,7 @@
     if (ISINSTANCE(sender, BBBookResultCell)) {
         BBBookResultCell* resultCell = (BBBookResultCell*)sender;
         BBDetailViewController* dest = [segue destinationViewController];
-        dest.itemText = resultCell.mTitle.text;
+        dest.itemText = resultCell.titleLabel.text;
     }
 }
 
@@ -62,11 +91,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_resultData count];
+    int currentResultCount = [_resultData count];
+    if (currentResultCount == 0)
+    {
+        return 1;
+    }
+    else if (currentResultCount < _resultTotal)
+    {
+        return currentResultCount + 1;
+    }
+    return currentResultCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (_resultTotal == 0)
+    {
+        return [self getNoResultCell];
+    }
+
+    if (indexPath.row == [_resultData count])
+    {
+        return [self getLoadMoreCell];
+    }
+    
     static NSString *reuseIdentifier = @"BBBookResultCell";
     BBBookResultCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     if (!cell) {
@@ -74,32 +122,27 @@
     }
     NSDictionary *book = [_resultData objectAtIndex:indexPath.row];
     
-    cell.mTitle.text = [book objectForKey:@"title"];
-    cell.mAuthor.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
-    cell.mDesc.text = [book objectForKey:@"summary"];
-    [cell.mDesc sizeToFit];
-    [cell.mCover setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
+    cell.titleLabel.text = [book objectForKey:@"title"];
+    cell.authorLabel.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
+    cell.descLabel.text = [book objectForKey:@"summary"];
+    [cell.coverImage setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
+
+    [cell.descLabel sizeToFit];
     return cell;
 }
 
 #pragma mark - Private
 
-- (void)doSearch:(NSString*)searchText
+- (void)doSearch:(NSString*)searchText start:(int) startIndex
 {
-    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&apikey=07d7b27cc7c0ea1b178717765742be51", searchText];
+    NSString *apiString = [NSString stringWithFormat:@"https://api.douban.com/v2/book/search?q=%@&start=%d&apikey=07d7b27cc7c0ea1b178717765742be51", [searchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], startIndex];
     NSURL *url = [[NSURL alloc] initWithString:apiString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         NSDictionary *r = JSON;
-        NSArray *books = [r objectForKey:@"books"];
-        
-        _resultData = [[NSMutableArray alloc] initWithCapacity:[books count]];
-        
-        for (NSDictionary *book in books)
-        {
-            [_resultData addObject:book];
-        }
+        _resultTotal = [[r objectForKey:@"total"] intValue];
+        [_resultData addObjectsFromArray:[r objectForKey:@"books"]];
         
         [self.tableView reloadData];
         
@@ -117,7 +160,18 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110;
+    return (indexPath.row == [_resultData count])? 44 : 110;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([_resultData count] == 0)
+    {
+        return;
+    }
+    if (indexPath.row == [_resultData count])
+    {
+        [self doSearch:_searchText start:[_resultData count]];
+    }
 }
 
 @end
