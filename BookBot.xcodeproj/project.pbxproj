@@ -24,6 +24,7 @@
 		62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F52716771CDB00D8D130 /* BBBookResultCell.m */; };
 		62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */; };
 		62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */; };
+		887674AE168AEDB300BD3B1E /* BBDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 887674AD168AEDB300BD3B1E /* BBDetailData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		62B2F5A916773FA700D8D130 /* BBDemoZBarSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoZBarSDKViewController.h; sourceTree = "<group>"; };
 		62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoZBarSDKViewController.m; sourceTree = "<group>"; };
 		87F4C6BA883541BBAF6AE0A5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		887674AC168AEDB300BD3B1E /* BBDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDetailData.h; sourceTree = "<group>"; };
+		887674AD168AEDB300BD3B1E /* BBDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDetailData.m; sourceTree = "<group>"; };
 		C0742E63E87F4EEA8601DCD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +109,7 @@
 		62B2F4F71677037100D8D130 /* BookBot */ = {
 			isa = PBXGroup;
 			children = (
+				887674AA168AED2C00BD3B1E /* Model */,
 				62B2F51E1677094A00D8D130 /* Controllers */,
 				62B2F51F1677094A00D8D130 /* Views */,
 				62B2F51D1677094100D8D130 /* Resources */,
@@ -180,6 +184,15 @@
 				62B2F52716771CDB00D8D130 /* BBBookResultCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		887674AA168AED2C00BD3B1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				887674AC168AEDB300BD3B1E /* BBDetailData.h */,
+				887674AD168AEDB300BD3B1E /* BBDetailData.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +288,7 @@
 				62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */,
 				62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */,
 				62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */,
+				887674AE168AEDB300BD3B1E /* BBDetailData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

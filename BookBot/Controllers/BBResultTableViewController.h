@@ -10,6 +10,7 @@
 
 @interface BBResultTableViewController : UITableViewController
 
+@property (strong) NSMutableArray *detailArray;
 @property (copy, nonatomic) NSString* searchText;
 @property (strong, nonatomic) NSMutableArray* resultData;
 @property (readwrite, assign) NSInteger resultTotal;
