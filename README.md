@@ -1,11 +1,9 @@
-##读书综合搜索
+## BootBot Demo
 
-
-简单的读书综合搜索应用，基于图书v2 api实现，基本功能是通过文本搜索图书条目，在此基础上可能的扩充有：
+A simple book comprehensive search app based on douban book API v2. There are some basic features:
 	
-* 通过条形码进行搜索
-* 实现图书条目收藏（短评、想读/在读/读过、标签、评星）
-* 推荐图书条目
-* 加入购书单
-* 搜索杂志、作者、丛书、豆列
-* 语音搜索（?!，Siri没法用，也许可以用google的语音识别api）
+- Search by barcode
+- Book subject collection (reviews, marks, tags, ratings)
+- Book recommendation & add to Bookcart
+- Search magazines, arthors, series of books, doulists
+- Voice search (by Google voice recognition API)

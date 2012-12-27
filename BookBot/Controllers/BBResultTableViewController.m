@@ -16,6 +16,7 @@
 #import "BBBookResultCell.h"
 #import "BBDetailViewController.h"
 #import "AppCommon.h"
+#import "BBDetailData.h"
 
 
 @interface BBResultTableViewController ()
@@ -76,9 +77,20 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (ISINSTANCE(sender, BBBookResultCell)) {
+        BBDetailViewController *detailController = [segue destinationViewController];
         BBBookResultCell* resultCell = (BBBookResultCell*)sender;
-        BBDetailViewController* dest = [segue destinationViewController];
-        dest.itemText = resultCell.titleLabel.text;
+        
+        NSString *title = resultCell.titleLabel.text;
+        NSString *author = resultCell.authorLabel.text;
+        NSString *summary= resultCell.descLabel.text;
+        
+        BBDetailData *detail = [[BBDetailData alloc] init];
+        
+        detail.title = title;
+        detail.author = author;
+        detail.summary = summary;
+        
+        detailController.detailItem = detail;
     }
 }
 
