@@ -10,10 +10,10 @@
 
 @interface BBDetailData : NSObject
 
-@property (strong) NSString *title;
-@property (strong) NSString *author;
-@property (strong) NSString *summary;
-@property (strong) UIImage *fullCover;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) NSString *summary;
+@property (strong, nonatomic) UIImage *fullCover;
 
 - (id)initWithTitle:(NSString *)title author:(NSString *)author summary:(NSString *)summary fullCover:(UIImage *)fullCover;
 
