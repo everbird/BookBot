@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AEA47F3C2E6429AB65213ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0742E63E87F4EEA8601DCD5 /* libPods.a */; };
+		620E19AA168AE7F400A97687 /* BBDemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */; };
 		62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C407167785BD0023C71E /* Default-568h@2x.png */; };
 		62A7C40B167785BD0023C71E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C408167785BD0023C71E /* Default.png */; };
 		62A7C40C167785BD0023C71E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C409167785BD0023C71E /* Default@2x.png */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		620E19A8168AE7F400A97687 /* BBDemoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoContainerViewController.h; sourceTree = "<group>"; };
+		620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoContainerViewController.m; sourceTree = "<group>"; };
 		62A7C407167785BD0023C71E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		62A7C408167785BD0023C71E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		62A7C409167785BD0023C71E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */,
 				62B2F5A916773FA700D8D130 /* BBDemoZBarSDKViewController.h */,
 				62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */,
+				620E19A8168AE7F400A97687 /* BBDemoContainerViewController.h */,
+				620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */,
 				62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */,
 				887674AE168AEDB300BD3B1E /* BBDetailData.m in Sources */,
+				620E19AA168AE7F400A97687 /* BBDemoContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
