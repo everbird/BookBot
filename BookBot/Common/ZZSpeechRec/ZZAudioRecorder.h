@@ -13,6 +13,7 @@
 
 @interface ZZAudioRecorder : AVAudioRecorder <ZZAVAudioProtocol> {
     double _silenceTime;
+    BOOL _isDetectedVoice;
 }
 
 @property (nonatomic, copy) NSString* recordedFile;

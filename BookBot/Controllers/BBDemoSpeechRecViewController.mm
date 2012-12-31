@@ -77,7 +77,7 @@
         NSDictionary* resultDict = [(NSData*)responseObject objectFromJSONData];
         NSLog(@">>> success: %@", resultDict);
         NSArray* hypotheses = [resultDict objectForKey:@"hypotheses"];
-        if (hypotheses) {
+        if (hypotheses && [hypotheses count]>0) {
             NSDictionary* result = [hypotheses objectAtIndex:0];
             _resultLabel.text = [result objectForKey:@"utterance"];
         } else {

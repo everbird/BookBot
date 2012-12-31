@@ -34,6 +34,7 @@ NSString* const kRecordedFile = @"recorded.caf";
 
 - (void)startRecording
 {
+    _isDetectedVoice = NO;
     [self prepareToRecord];
     [self record];
     [self startMonitor];
@@ -75,8 +76,11 @@ NSString* const kRecordedFile = @"recorded.caf";
 
 - (void)refresh
 {
-    if ([self peakPowerForChannel:0] < PEAKPOWER_THRESHOLDER) {
+    if (_isDetectedVoice && [self peakPowerForChannel:0] < PEAKPOWER_THRESHOLDER) {
         _silenceTime += 0.1;
+    } else if ([self peakPowerForChannel:0] >= PEAKPOWER_THRESHOLDER) {
+        _silenceTime = 0;
+        _isDetectedVoice = YES;
     }
     
     if (_silenceTime > SILENCE_DELAY) {
