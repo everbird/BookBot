@@ -9,6 +9,35 @@
 /* Begin PBXBuildFile section */
 		1AEA47F3C2E6429AB65213ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0742E63E87F4EEA8601DCD5 /* libPods.a */; };
 		620E19AA168AE7F400A97687 /* BBDemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */; };
+		628B0C8F1691E63200FD52EA /* CALevelMeter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C221691E63200FD52EA /* CALevelMeter.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		628B0C901691E63200FD52EA /* flac_encoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C231691E63200FD52EA /* flac_encoder.c */; };
+		628B0C911691E63200FD52EA /* GLLevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C251691E63200FD52EA /* GLLevelMeter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		628B0C921691E63200FD52EA /* LevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C271691E63200FD52EA /* LevelMeter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		628B0C931691E63200FD52EA /* bitmath.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C291691E63200FD52EA /* bitmath.c */; };
+		628B0C941691E63200FD52EA /* bitreader.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C2A1691E63200FD52EA /* bitreader.c */; };
+		628B0C951691E63200FD52EA /* bitwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C2B1691E63200FD52EA /* bitwriter.c */; };
+		628B0C961691E63200FD52EA /* cpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C2C1691E63200FD52EA /* cpu.c */; };
+		628B0C971691E63200FD52EA /* crc.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C2D1691E63200FD52EA /* crc.c */; };
+		628B0C981691E63200FD52EA /* fixed.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C2E1691E63200FD52EA /* fixed.c */; };
+		628B0C991691E63200FD52EA /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C391691E63200FD52EA /* float.c */; };
+		628B0C9A1691E63200FD52EA /* format.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C3A1691E63200FD52EA /* format.c */; };
+		628B0CA21691E63200FD52EA /* lpc.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C441691E63200FD52EA /* lpc.c */; };
+		628B0CA31691E63200FD52EA /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C451691E63200FD52EA /* md5.c */; };
+		628B0CA41691E63200FD52EA /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C461691E63200FD52EA /* memory.c */; };
+		628B0CA51691E63200FD52EA /* metadata_iterators.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C471691E63200FD52EA /* metadata_iterators.c */; };
+		628B0CA61691E63200FD52EA /* metadata_object.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C481691E63200FD52EA /* metadata_object.c */; };
+		628B0CB91691E63200FD52EA /* stream_decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C831691E63200FD52EA /* stream_decoder.c */; };
+		628B0CBA1691E63200FD52EA /* stream_encoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C841691E63200FD52EA /* stream_encoder.c */; };
+		628B0CBB1691E63200FD52EA /* stream_encoder_framing.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C851691E63200FD52EA /* stream_encoder_framing.c */; };
+		628B0CBC1691E63200FD52EA /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C861691E63200FD52EA /* window.c */; };
+		628B0CBD1691E63200FD52EA /* MeterTable.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C881691E63200FD52EA /* MeterTable.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		628B0CBE1691E63200FD52EA /* ZZAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C8A1691E63200FD52EA /* ZZAudioRecorder.m */; };
+		628B0CBF1691E63200FD52EA /* ZZLevelMeter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C8E1691E63200FD52EA /* ZZLevelMeter.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		628B0CC21691E68A00FD52EA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC11691E68A00FD52EA /* OpenGLES.framework */; };
+		628B0CC41691E69000FD52EA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC31691E69000FD52EA /* QuartzCore.framework */; };
+		628B0CC61691E69900FD52EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC51691E69900FD52EA /* AVFoundation.framework */; };
+		628B0CC81691E6A200FD52EA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC71691E6A200FD52EA /* AudioToolbox.framework */; };
+		628B0CCA1691E6A700FD52EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */; };
 		62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C407167785BD0023C71E /* Default-568h@2x.png */; };
 		62A7C40B167785BD0023C71E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C408167785BD0023C71E /* Default.png */; };
 		62A7C40C167785BD0023C71E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C409167785BD0023C71E /* Default@2x.png */; };
@@ -31,6 +60,43 @@
 /* Begin PBXFileReference section */
 		620E19A8168AE7F400A97687 /* BBDemoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoContainerViewController.h; sourceTree = "<group>"; };
 		620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoContainerViewController.m; sourceTree = "<group>"; };
+		628B0C211691E63200FD52EA /* CALevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALevelMeter.h; sourceTree = "<group>"; };
+		628B0C221691E63200FD52EA /* CALevelMeter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CALevelMeter.mm; sourceTree = "<group>"; };
+		628B0C231691E63200FD52EA /* flac_encoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = flac_encoder.c; sourceTree = "<group>"; };
+		628B0C241691E63200FD52EA /* GLLevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLLevelMeter.h; sourceTree = "<group>"; };
+		628B0C251691E63200FD52EA /* GLLevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLLevelMeter.m; sourceTree = "<group>"; };
+		628B0C261691E63200FD52EA /* LevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelMeter.h; sourceTree = "<group>"; };
+		628B0C271691E63200FD52EA /* LevelMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelMeter.m; sourceTree = "<group>"; };
+		628B0C291691E63200FD52EA /* bitmath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitmath.c; sourceTree = "<group>"; };
+		628B0C2A1691E63200FD52EA /* bitreader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitreader.c; sourceTree = "<group>"; };
+		628B0C2B1691E63200FD52EA /* bitwriter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitwriter.c; sourceTree = "<group>"; };
+		628B0C2C1691E63200FD52EA /* cpu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cpu.c; sourceTree = "<group>"; };
+		628B0C2D1691E63200FD52EA /* crc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc.c; sourceTree = "<group>"; };
+		628B0C2E1691E63200FD52EA /* fixed.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fixed.c; sourceTree = "<group>"; };
+		628B0C391691E63200FD52EA /* float.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = float.c; sourceTree = "<group>"; };
+		628B0C3A1691E63200FD52EA /* format.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = format.c; sourceTree = "<group>"; };
+		628B0C441691E63200FD52EA /* lpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lpc.c; sourceTree = "<group>"; };
+		628B0C451691E63200FD52EA /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = md5.c; sourceTree = "<group>"; };
+		628B0C461691E63200FD52EA /* memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = memory.c; sourceTree = "<group>"; };
+		628B0C471691E63200FD52EA /* metadata_iterators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metadata_iterators.c; sourceTree = "<group>"; };
+		628B0C481691E63200FD52EA /* metadata_object.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = metadata_object.c; sourceTree = "<group>"; };
+		628B0C831691E63200FD52EA /* stream_decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stream_decoder.c; sourceTree = "<group>"; };
+		628B0C841691E63200FD52EA /* stream_encoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stream_encoder.c; sourceTree = "<group>"; };
+		628B0C851691E63200FD52EA /* stream_encoder_framing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stream_encoder_framing.c; sourceTree = "<group>"; };
+		628B0C861691E63200FD52EA /* window.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = window.c; sourceTree = "<group>"; };
+		628B0C871691E63200FD52EA /* MeterTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeterTable.h; sourceTree = "<group>"; };
+		628B0C881691E63200FD52EA /* MeterTable.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MeterTable.mm; sourceTree = "<group>"; };
+		628B0C891691E63200FD52EA /* ZZAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioRecorder.h; sourceTree = "<group>"; };
+		628B0C8A1691E63200FD52EA /* ZZAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioRecorder.m; sourceTree = "<group>"; };
+		628B0C8B1691E63200FD52EA /* ZZAudioRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioRecorderDelegate.h; sourceTree = "<group>"; };
+		628B0C8C1691E63200FD52EA /* ZZAVAudioProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAVAudioProtocol.h; sourceTree = "<group>"; };
+		628B0C8D1691E63200FD52EA /* ZZLevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLevelMeter.h; sourceTree = "<group>"; };
+		628B0C8E1691E63200FD52EA /* ZZLevelMeter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZLevelMeter.mm; sourceTree = "<group>"; };
+		628B0CC11691E68A00FD52EA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		628B0CC31691E69000FD52EA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		628B0CC51691E69900FD52EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		628B0CC71691E6A200FD52EA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		62A7C407167785BD0023C71E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		62A7C408167785BD0023C71E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		62A7C409167785BD0023C71E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -70,6 +136,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				628B0CCA1691E6A700FD52EA /* SystemConfiguration.framework in Frameworks */,
+				628B0CC81691E6A200FD52EA /* AudioToolbox.framework in Frameworks */,
+				628B0CC61691E69900FD52EA /* AVFoundation.framework in Frameworks */,
+				628B0CC41691E69000FD52EA /* QuartzCore.framework in Frameworks */,
+				628B0CC21691E68A00FD52EA /* OpenGLES.framework in Frameworks */,
 				62B2F4F21677037100D8D130 /* UIKit.framework in Frameworks */,
 				62B2F4F41677037100D8D130 /* Foundation.framework in Frameworks */,
 				62B2F4F61677037100D8D130 /* CoreGraphics.framework in Frameworks */,
@@ -80,6 +151,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		628B0C1F1691E63200FD52EA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				628B0C201691E63200FD52EA /* ZZSpeechRec */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		628B0C201691E63200FD52EA /* ZZSpeechRec */ = {
+			isa = PBXGroup;
+			children = (
+				628B0C211691E63200FD52EA /* CALevelMeter.h */,
+				628B0C221691E63200FD52EA /* CALevelMeter.mm */,
+				628B0C231691E63200FD52EA /* flac_encoder.c */,
+				628B0C241691E63200FD52EA /* GLLevelMeter.h */,
+				628B0C251691E63200FD52EA /* GLLevelMeter.m */,
+				628B0C261691E63200FD52EA /* LevelMeter.h */,
+				628B0C271691E63200FD52EA /* LevelMeter.m */,
+				628B0C281691E63200FD52EA /* libFLAC */,
+				628B0C871691E63200FD52EA /* MeterTable.h */,
+				628B0C881691E63200FD52EA /* MeterTable.mm */,
+				628B0C891691E63200FD52EA /* ZZAudioRecorder.h */,
+				628B0C8A1691E63200FD52EA /* ZZAudioRecorder.m */,
+				628B0C8B1691E63200FD52EA /* ZZAudioRecorderDelegate.h */,
+				628B0C8C1691E63200FD52EA /* ZZAVAudioProtocol.h */,
+				628B0C8D1691E63200FD52EA /* ZZLevelMeter.h */,
+				628B0C8E1691E63200FD52EA /* ZZLevelMeter.mm */,
+			);
+			path = ZZSpeechRec;
+			sourceTree = "<group>";
+		};
+		628B0C281691E63200FD52EA /* libFLAC */ = {
+			isa = PBXGroup;
+			children = (
+				628B0C291691E63200FD52EA /* bitmath.c */,
+				628B0C2A1691E63200FD52EA /* bitreader.c */,
+				628B0C2B1691E63200FD52EA /* bitwriter.c */,
+				628B0C2C1691E63200FD52EA /* cpu.c */,
+				628B0C2D1691E63200FD52EA /* crc.c */,
+				628B0C2E1691E63200FD52EA /* fixed.c */,
+				628B0C391691E63200FD52EA /* float.c */,
+				628B0C3A1691E63200FD52EA /* format.c */,
+				628B0C441691E63200FD52EA /* lpc.c */,
+				628B0C451691E63200FD52EA /* md5.c */,
+				628B0C461691E63200FD52EA /* memory.c */,
+				628B0C471691E63200FD52EA /* metadata_iterators.c */,
+				628B0C481691E63200FD52EA /* metadata_object.c */,
+				628B0C831691E63200FD52EA /* stream_decoder.c */,
+				628B0C841691E63200FD52EA /* stream_encoder.c */,
+				628B0C851691E63200FD52EA /* stream_encoder_framing.c */,
+				628B0C861691E63200FD52EA /* window.c */,
+			);
+			path = libFLAC;
+			sourceTree = "<group>";
+		};
 		62B2F4E21677037100D8D130 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +227,11 @@
 		62B2F4F01677037100D8D130 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */,
+				628B0CC71691E6A200FD52EA /* AudioToolbox.framework */,
+				628B0CC51691E69900FD52EA /* AVFoundation.framework */,
+				628B0CC31691E69000FD52EA /* QuartzCore.framework */,
+				628B0CC11691E68A00FD52EA /* OpenGLES.framework */,
 				62B2F4F11677037100D8D130 /* UIKit.framework */,
 				62B2F4F31677037100D8D130 /* Foundation.framework */,
 				62B2F4F51677037100D8D130 /* CoreGraphics.framework */,
@@ -112,6 +243,7 @@
 		62B2F4F71677037100D8D130 /* BookBot */ = {
 			isa = PBXGroup;
 			children = (
+				628B0C1F1691E63200FD52EA /* Common */,
 				887674AA168AED2C00BD3B1E /* Model */,
 				62B2F51E1677094A00D8D130 /* Controllers */,
 				62B2F51F1677094A00D8D130 /* Views */,
@@ -295,6 +427,30 @@
 				62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */,
 				887674AE168AEDB300BD3B1E /* BBDetailData.m in Sources */,
 				620E19AA168AE7F400A97687 /* BBDemoContainerViewController.m in Sources */,
+				628B0C8F1691E63200FD52EA /* CALevelMeter.mm in Sources */,
+				628B0C901691E63200FD52EA /* flac_encoder.c in Sources */,
+				628B0C911691E63200FD52EA /* GLLevelMeter.m in Sources */,
+				628B0C921691E63200FD52EA /* LevelMeter.m in Sources */,
+				628B0C931691E63200FD52EA /* bitmath.c in Sources */,
+				628B0C941691E63200FD52EA /* bitreader.c in Sources */,
+				628B0C951691E63200FD52EA /* bitwriter.c in Sources */,
+				628B0C961691E63200FD52EA /* cpu.c in Sources */,
+				628B0C971691E63200FD52EA /* crc.c in Sources */,
+				628B0C981691E63200FD52EA /* fixed.c in Sources */,
+				628B0C991691E63200FD52EA /* float.c in Sources */,
+				628B0C9A1691E63200FD52EA /* format.c in Sources */,
+				628B0CA21691E63200FD52EA /* lpc.c in Sources */,
+				628B0CA31691E63200FD52EA /* md5.c in Sources */,
+				628B0CA41691E63200FD52EA /* memory.c in Sources */,
+				628B0CA51691E63200FD52EA /* metadata_iterators.c in Sources */,
+				628B0CA61691E63200FD52EA /* metadata_object.c in Sources */,
+				628B0CB91691E63200FD52EA /* stream_decoder.c in Sources */,
+				628B0CBA1691E63200FD52EA /* stream_encoder.c in Sources */,
+				628B0CBB1691E63200FD52EA /* stream_encoder_framing.c in Sources */,
+				628B0CBC1691E63200FD52EA /* window.c in Sources */,
+				628B0CBD1691E63200FD52EA /* MeterTable.mm in Sources */,
+				628B0CBE1691E63200FD52EA /* ZZAudioRecorder.m in Sources */,
+				628B0CBF1691E63200FD52EA /* ZZLevelMeter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
