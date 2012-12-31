@@ -38,6 +38,7 @@
 		628B0CC61691E69900FD52EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC51691E69900FD52EA /* AVFoundation.framework */; };
 		628B0CC81691E6A200FD52EA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC71691E6A200FD52EA /* AudioToolbox.framework */; };
 		628B0CCA1691E6A700FD52EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */; };
+		628B0CCD1691E72500FD52EA /* BBDemoSpeechRecViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0CCC1691E72500FD52EA /* BBDemoSpeechRecViewController.mm */; };
 		62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C407167785BD0023C71E /* Default-568h@2x.png */; };
 		62A7C40B167785BD0023C71E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C408167785BD0023C71E /* Default.png */; };
 		62A7C40C167785BD0023C71E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C409167785BD0023C71E /* Default@2x.png */; };
@@ -97,6 +98,8 @@
 		628B0CC51691E69900FD52EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		628B0CC71691E6A200FD52EA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		628B0CCB1691E72500FD52EA /* BBDemoSpeechRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoSpeechRecViewController.h; sourceTree = "<group>"; };
+		628B0CCC1691E72500FD52EA /* BBDemoSpeechRecViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BBDemoSpeechRecViewController.mm; sourceTree = "<group>"; };
 		62A7C407167785BD0023C71E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		62A7C408167785BD0023C71E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		62A7C409167785BD0023C71E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */,
 				620E19A8168AE7F400A97687 /* BBDemoContainerViewController.h */,
 				620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */,
+				628B0CCB1691E72500FD52EA /* BBDemoSpeechRecViewController.h */,
+				628B0CCC1691E72500FD52EA /* BBDemoSpeechRecViewController.mm */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				628B0CBD1691E63200FD52EA /* MeterTable.mm in Sources */,
 				628B0CBE1691E63200FD52EA /* ZZAudioRecorder.m in Sources */,
 				628B0CBF1691E63200FD52EA /* ZZLevelMeter.mm in Sources */,
+				628B0CCD1691E72500FD52EA /* BBDemoSpeechRecViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
