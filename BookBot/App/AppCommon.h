@@ -11,5 +11,8 @@
 
 #import "AppDefines.h"
 
+// google语音识别
+#define GOOGLE_AUDIO_URL    @"speech-api/v1/recognize?xjerr=1&client=chromium&lang=zh-CN"
+#define AV_DEST_FILE        @"dest.flac"
 
 #endif
