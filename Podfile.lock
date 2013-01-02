@@ -1,20 +1,23 @@
 
 PODS:
 - AFNetworking (1.0.1)
+- FTUtils (1.1.1)
 - JSONKit (1.5pre)
 - MBProgressHUD (0.5)
 - ZBarSDK (1.3.1)
 
 DEPENDENCIES:
 - AFNetworking (~> 1.0.1)
+- FTUtils (~> 1.1.1)
 - JSONKit (~> 1.5pre)
 - MBProgressHUD (~> 0.5)
 - ZBarSDK (~> 1.3.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
-  JSONKit: a01a22c75f27eae76b4badd55a91c20fe6e86477
+  AFNetworking: 0bce3ae41023e080e96b8a2e0d07c94709f72a81
+  FTUtils: 7d4a9e255a9b0b1d0ec22f27d819862eb205c3bc
+  JSONKit: 3d4708953ea7ae399a49777372d8b060a43ddd27
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
-  ZBarSDK: 441fd3d89922df23bc3c51d491bf9d3fe365a19c
+  ZBarSDK: 42fdf42e8163a4f1732d67dbdc68a8f534bea754
 
 COCOAPODS: 0.16.0
