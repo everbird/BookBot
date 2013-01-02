@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BBCoverViewController.h"
+
 @interface BBViewController : UIViewController
 {
     NSMutableArray *searchHistory;
     NSArray *matchedHistory;
+    BBCoverViewController* _coverVC;
 }
 
 @property (nonatomic, strong) IBOutlet UISearchDisplayController *uiSearchDisplayController;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
-
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 @end

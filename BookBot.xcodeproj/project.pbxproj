@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1AEA47F3C2E6429AB65213ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0742E63E87F4EEA8601DCD5 /* libPods.a */; };
+		620DBE901693D2B300FCFBC6 /* lg_book.png in Resources */ = {isa = PBXBuildFile; fileRef = 620DBE8F1693D2B300FCFBC6 /* lg_book.png */; };
+		620DBE931693D52400FCFBC6 /* lg_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 620DBE921693D52400FCFBC6 /* lg_book@2x.png */; };
+		620DBF021693E15C00FCFBC6 /* BBCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620DBF001693E15C00FCFBC6 /* BBCoverViewController.m */; };
+		620DBF031693E15C00FCFBC6 /* BBCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620DBF011693E15C00FCFBC6 /* BBCoverViewController.xib */; };
 		620E19AA168AE7F400A97687 /* BBDemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */; };
 		628B0C8F1691E63200FD52EA /* CALevelMeter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C221691E63200FD52EA /* CALevelMeter.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		628B0C901691E63200FD52EA /* flac_encoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C231691E63200FD52EA /* flac_encoder.c */; };
@@ -59,6 +63,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		620DBE8F1693D2B300FCFBC6 /* lg_book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lg_book.png; sourceTree = "<group>"; };
+		620DBE921693D52400FCFBC6 /* lg_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lg_book@2x.png"; sourceTree = "<group>"; };
+		620DBEFF1693E15C00FCFBC6 /* BBCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCoverViewController.h; sourceTree = "<group>"; };
+		620DBF001693E15C00FCFBC6 /* BBCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCoverViewController.m; sourceTree = "<group>"; };
+		620DBF011693E15C00FCFBC6 /* BBCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBCoverViewController.xib; sourceTree = "<group>"; };
 		620E19A8168AE7F400A97687 /* BBDemoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoContainerViewController.h; sourceTree = "<group>"; };
 		620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoContainerViewController.m; sourceTree = "<group>"; };
 		628B0C211691E63200FD52EA /* CALevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALevelMeter.h; sourceTree = "<group>"; };
@@ -282,6 +291,8 @@
 		62B2F51D1677094100D8D130 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				620DBE921693D52400FCFBC6 /* lg_book@2x.png */,
+				620DBE8F1693D2B300FCFBC6 /* lg_book.png */,
 				62A7C407167785BD0023C71E /* Default-568h@2x.png */,
 				62A7C408167785BD0023C71E /* Default.png */,
 				62A7C409167785BD0023C71E /* Default@2x.png */,
@@ -307,6 +318,9 @@
 				620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */,
 				628B0CCB1691E72500FD52EA /* BBDemoSpeechRecViewController.h */,
 				628B0CCC1691E72500FD52EA /* BBDemoSpeechRecViewController.mm */,
+				620DBEFF1693E15C00FCFBC6 /* BBCoverViewController.h */,
+				620DBF001693E15C00FCFBC6 /* BBCoverViewController.m */,
+				620DBF011693E15C00FCFBC6 /* BBCoverViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -395,6 +409,9 @@
 				62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */,
 				62A7C40B167785BD0023C71E /* Default.png in Resources */,
 				62A7C40C167785BD0023C71E /* Default@2x.png in Resources */,
+				620DBE901693D2B300FCFBC6 /* lg_book.png in Resources */,
+				620DBE931693D52400FCFBC6 /* lg_book@2x.png in Resources */,
+				620DBF031693E15C00FCFBC6 /* BBCoverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +474,7 @@
 				628B0CBE1691E63200FD52EA /* ZZAudioRecorder.m in Sources */,
 				628B0CBF1691E63200FD52EA /* ZZLevelMeter.mm in Sources */,
 				628B0CCD1691E72500FD52EA /* BBDemoSpeechRecViewController.mm in Sources */,
+				620DBF021693E15C00FCFBC6 /* BBCoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

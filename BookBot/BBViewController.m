@@ -10,7 +10,7 @@
 
 #import "BBResultTableViewController.h"
 #import "AppCommon.h"
-
+#import <FTUtils/FTUtils.h>
 
 @interface BBViewController ()
 
@@ -39,6 +39,9 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:[self getPlistLocation]];
     searchHistory = [[NSMutableArray alloc] initWithArray:array];
+    
+    _coverVC = [[BBCoverViewController alloc] initWithNibName:@"BBCoverViewController" bundle:nil];
+    _coverVC.shown = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +53,14 @@
 {
     [super viewWillAppear:animated];
     
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    
+    if (!_coverVC.shown) {
+        _coverVC.view.frame = self.view.bounds;
+        [self.view addSubview:_coverVC.view];
+        [self.view bringSubviewToFront:_coverVC.view];
+        _coverVC.shown = YES;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -62,6 +72,13 @@
         [searchHistory addObject:dest.searchText];
     }
     [self saveHistory];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [_coverVC logoMove];
 }
 
 #pragma mark - UITableViewController delegate methods
@@ -149,6 +166,7 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
 
 - (void)viewDidUnload {
     [self setSearchBar:nil];
+    [self setLogoImageView:nil];
     [super viewDidUnload];
 }
 @end
