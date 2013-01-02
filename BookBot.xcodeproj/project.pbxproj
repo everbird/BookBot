@@ -43,6 +43,9 @@
 		628B0CC81691E6A200FD52EA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC71691E6A200FD52EA /* AudioToolbox.framework */; };
 		628B0CCA1691E6A700FD52EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */; };
 		628B0CCD1691E72500FD52EA /* BBDemoSpeechRecViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0CCC1691E72500FD52EA /* BBDemoSpeechRecViewController.mm */; };
+		629B84AD16940884000358AA /* BBXibLongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B84AB16940884000358AA /* BBXibLongViewController.m */; };
+		629B84AE16940884000358AA /* BBXibLongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629B84AC16940884000358AA /* BBXibLongViewController.xib */; };
+		629B84B2169408E6000358AA /* BBDemoXibLongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629B84B1169408E6000358AA /* BBDemoXibLongViewController.m */; };
 		62A7C40A167785BD0023C71E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C407167785BD0023C71E /* Default-568h@2x.png */; };
 		62A7C40B167785BD0023C71E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C408167785BD0023C71E /* Default.png */; };
 		62A7C40C167785BD0023C71E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A7C409167785BD0023C71E /* Default@2x.png */; };
@@ -109,6 +112,11 @@
 		628B0CC91691E6A700FD52EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		628B0CCB1691E72500FD52EA /* BBDemoSpeechRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoSpeechRecViewController.h; sourceTree = "<group>"; };
 		628B0CCC1691E72500FD52EA /* BBDemoSpeechRecViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BBDemoSpeechRecViewController.mm; sourceTree = "<group>"; };
+		629B84AA16940884000358AA /* BBXibLongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXibLongViewController.h; sourceTree = "<group>"; };
+		629B84AB16940884000358AA /* BBXibLongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXibLongViewController.m; sourceTree = "<group>"; };
+		629B84AC16940884000358AA /* BBXibLongViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBXibLongViewController.xib; sourceTree = "<group>"; };
+		629B84B0169408E6000358AA /* BBDemoXibLongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoXibLongViewController.h; sourceTree = "<group>"; };
+		629B84B1169408E6000358AA /* BBDemoXibLongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoXibLongViewController.m; sourceTree = "<group>"; };
 		62A7C407167785BD0023C71E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		62A7C408167785BD0023C71E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		62A7C409167785BD0023C71E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -321,6 +329,11 @@
 				620DBEFF1693E15C00FCFBC6 /* BBCoverViewController.h */,
 				620DBF001693E15C00FCFBC6 /* BBCoverViewController.m */,
 				620DBF011693E15C00FCFBC6 /* BBCoverViewController.xib */,
+				629B84AA16940884000358AA /* BBXibLongViewController.h */,
+				629B84AB16940884000358AA /* BBXibLongViewController.m */,
+				629B84AC16940884000358AA /* BBXibLongViewController.xib */,
+				629B84B0169408E6000358AA /* BBDemoXibLongViewController.h */,
+				629B84B1169408E6000358AA /* BBDemoXibLongViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -412,6 +425,7 @@
 				620DBE901693D2B300FCFBC6 /* lg_book.png in Resources */,
 				620DBE931693D52400FCFBC6 /* lg_book@2x.png in Resources */,
 				620DBF031693E15C00FCFBC6 /* BBCoverViewController.xib in Resources */,
+				629B84AE16940884000358AA /* BBXibLongViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +489,8 @@
 				628B0CBF1691E63200FD52EA /* ZZLevelMeter.mm in Sources */,
 				628B0CCD1691E72500FD52EA /* BBDemoSpeechRecViewController.mm in Sources */,
 				620DBF021693E15C00FCFBC6 /* BBCoverViewController.m in Sources */,
+				629B84AD16940884000358AA /* BBXibLongViewController.m in Sources */,
+				629B84B2169408E6000358AA /* BBDemoXibLongViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
