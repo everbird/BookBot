@@ -10,10 +10,15 @@
 
 #import "BBResultTableViewController.h"
 #import "AppCommon.h"
+
+#import <AFNetworking/AFNetworking.h>
 #import <FTUtils/FTUtils.h>
+#import <JSONKit/JSONKit.h>
 
 @interface BBViewController ()
-
+{
+    UIAlertView *alert;
+}
 @end
 
 @implementation BBViewController
@@ -42,6 +47,15 @@
     
     _coverVC = [[BBCoverViewController alloc] initWithNibName:@"BBCoverViewController" bundle:nil];
     _coverVC.shown = NO;
+    
+    [_speechButton addTarget:self action:@selector(startRecording:) forControlEvents:UIControlEventTouchDown];
+    [_speechButton addTarget:self action:@selector(stopRecording:) forControlEvents:UIControlEventTouchUpInside];
+    
+    alert = [[UIAlertView alloc] initWithTitle:@"语音识别"
+                                                    message:@"语音未识别，请再次尝试"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +93,86 @@
     [super viewDidAppear:animated];
     
     [_coverVC logoMove];
+}
+
+- (IBAction)startRecording:(id)sender
+{
+    _recorder = [[ZZAudioRecorder alloc] initWithDest:AV_DEST_FILE];
+    _recorder.recDelegate = self;
+    [_recorder startRecording];
+}
+
+- (IBAction)stopRecording:(id)sender
+{
+    if (_recorder.isRecording)
+    {
+        [_recorder finishRecording];
+    }
+    _recorder = nil;
+}
+
+- (void)recognize:(NSString*)dest
+{
+    NSString* filename = dest;
+    NSString *filePathDest = [NSTemporaryDirectory() stringByAppendingString:filename];
+    NSData* flacData = [[NSFileManager defaultManager] contentsAtPath:filePathDest];
+    AFHTTPClient *client= [AFHTTPClient clientWithBaseURL:[NSURL URLWithString:@"http://www.google.com/"]];
+    NSDictionary* sendDict = @{
+    @"name": [filename dataUsingEncoding:NSUTF8StringEncoding],
+    };
+    NSMutableURLRequest* request = [client multipartFormRequestWithMethod:@"POST" path:GOOGLE_AUDIO_URL parameters:sendDict constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFormData:flacData name:filename];
+    }];
+    
+    [request setValue:@"audio/x-flac; rate=16000" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* resultDict = [(NSData*)responseObject objectFromJSONData];
+        NSLog(@">>> success: %@", resultDict);
+        NSArray* hypotheses = [resultDict objectForKey:@"hypotheses"];
+        if (hypotheses.count)
+        {
+            NSDictionary* result = [hypotheses objectAtIndex:0];
+            _searchBar.text = [result objectForKey:@"utterance"];
+            [_searchBar becomeFirstResponder];
+        }
+        else
+        {
+            [alert show];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@">>> failure: %@", error);
+    }];
+    
+    [client enqueueHTTPRequestOperation:operation];
+}
+
+- (void)convertFrom:(NSString*)src to:(NSString*)dest
+{
+    const char *pFilePath = [src UTF8String];
+    FILE *infile;
+    long fileread;
+    
+    infile = fopen(pFilePath,"r");
+    fseek(infile, 0, SEEK_END);
+    fileread = ftell(infile);
+    fclose(infile);
+    
+    startEncode(pFilePath, [dest UTF8String], fileread);
+}
+
+- (void)afterFinishRecording
+{
+    [self convertFrom:_recorder.recordedFile to:[NSTemporaryDirectory() stringByAppendingString:AV_DEST_FILE]];
+    [self recognize: AV_DEST_FILE];
+}
+
+- (void)finishWhenSilenceDetected
+{
+    [_recorder finishRecording];
+    _recorder = nil;
 }
 
 #pragma mark - UITableViewController delegate methods
@@ -167,6 +261,7 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
 - (void)viewDidUnload {
     [self setSearchBar:nil];
     [self setLogoImageView:nil];
+    [self setSpeechButton:nil];
     [super viewDidUnload];
 }
 @end
