@@ -62,6 +62,10 @@
 		62B2F52816771CDB00D8D130 /* BBBookResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F52716771CDB00D8D130 /* BBBookResultCell.m */; };
 		62B2F59716772FD100D8D130 /* BBDemoAFNetworkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F59616772FD100D8D130 /* BBDemoAFNetworkingViewController.m */; };
 		62B2F5AB16773FA700D8D130 /* BBDemoZBarSDKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */; };
+		8805ABBD16A3D283002D36AA /* BBXibDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8805ABBC16A3D283002D36AA /* BBXibDetailViewController.xib */; };
+		8805ABC116A3D58A002D36AA /* BBXibDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805ABC016A3D58A002D36AA /* BBXibDetailViewController.m */; };
+		8813B69F16A47A4F00DDC781 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8813B69E16A47A4F00DDC781 /* Icon.png */; };
+		8813B6A116A47AEA00DDC781 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8813B6A016A47AEA00DDC781 /* Icon@2x.png */; };
 		887674AE168AEDB300BD3B1E /* BBDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 887674AD168AEDB300BD3B1E /* BBDetailData.m */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +150,11 @@
 		62B2F5A916773FA700D8D130 /* BBDemoZBarSDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoZBarSDKViewController.h; sourceTree = "<group>"; };
 		62B2F5AA16773FA700D8D130 /* BBDemoZBarSDKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoZBarSDKViewController.m; sourceTree = "<group>"; };
 		87F4C6BA883541BBAF6AE0A5 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		8805ABBC16A3D283002D36AA /* BBXibDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBXibDetailViewController.xib; sourceTree = "<group>"; };
+		8805ABBF16A3D58A002D36AA /* BBXibDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXibDetailViewController.h; sourceTree = "<group>"; };
+		8805ABC016A3D58A002D36AA /* BBXibDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXibDetailViewController.m; sourceTree = "<group>"; };
+		8813B69E16A47A4F00DDC781 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		8813B6A016A47AEA00DDC781 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		887674AC168AEDB300BD3B1E /* BBDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDetailData.h; sourceTree = "<group>"; };
 		887674AD168AEDB300BD3B1E /* BBDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDetailData.m; sourceTree = "<group>"; };
 		C0742E63E87F4EEA8601DCD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +308,8 @@
 		62B2F51D1677094100D8D130 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8813B6A016A47AEA00DDC781 /* Icon@2x.png */,
+				8813B69E16A47A4F00DDC781 /* Icon.png */,
 				620DBE921693D52400FCFBC6 /* lg_book@2x.png */,
 				620DBE8F1693D2B300FCFBC6 /* lg_book.png */,
 				62A7C407167785BD0023C71E /* Default-568h@2x.png */,
@@ -334,6 +345,9 @@
 				629B84AC16940884000358AA /* BBXibLongViewController.xib */,
 				629B84B0169408E6000358AA /* BBDemoXibLongViewController.h */,
 				629B84B1169408E6000358AA /* BBDemoXibLongViewController.m */,
+				8805ABBF16A3D58A002D36AA /* BBXibDetailViewController.h */,
+				8805ABC016A3D58A002D36AA /* BBXibDetailViewController.m */,
+				8805ABBC16A3D283002D36AA /* BBXibDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -426,6 +440,9 @@
 				620DBE931693D52400FCFBC6 /* lg_book@2x.png in Resources */,
 				620DBF031693E15C00FCFBC6 /* BBCoverViewController.xib in Resources */,
 				629B84AE16940884000358AA /* BBXibLongViewController.xib in Resources */,
+				8805ABBD16A3D283002D36AA /* BBXibDetailViewController.xib in Resources */,
+				8813B69F16A47A4F00DDC781 /* Icon.png in Resources */,
+				8813B6A116A47AEA00DDC781 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +508,7 @@
 				620DBF021693E15C00FCFBC6 /* BBCoverViewController.m in Sources */,
 				629B84AD16940884000358AA /* BBXibLongViewController.m in Sources */,
 				629B84B2169408E6000358AA /* BBDemoXibLongViewController.m in Sources */,
+				8805ABC116A3D58A002D36AA /* BBXibDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +592,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BookBot/BookBot-Prefix.pch";
 				INFOPLIST_FILE = "BookBot/BookBot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -586,6 +605,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BookBot/BookBot-Prefix.pch";
 				INFOPLIST_FILE = "BookBot/BookBot-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

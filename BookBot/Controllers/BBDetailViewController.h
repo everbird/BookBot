@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BBDetailData.h"
-
-@class BBDetailData;
+#import "BBXibDetailViewController.h"
 
 @interface BBDetailViewController : UIViewController
 
-@property (strong, nonatomic) BBDetailData  *detailItem;
-@property (copy, nonatomic) NSString *itemText;
-@property (weak, nonatomic) IBOutlet UIImageView *coverView;
-@property (strong, nonatomic) IBOutlet UILabel *titleField;
-@property (strong, nonatomic) IBOutlet UILabel *authorsLabel;
-@property (weak, nonatomic) IBOutlet UITextView *introView;
+@property (nonatomic, strong) BBXibDetailViewController *xibVC;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

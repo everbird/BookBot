@@ -78,7 +78,7 @@
 {
     if (ISINSTANCE(sender, BBBookResultCell)) {
         BBDetailViewController *detailController = [segue destinationViewController];
-        BBBookResultCell* resultCell = (BBBookResultCell*)sender;
+        BBBookResultCell *resultCell = (BBBookResultCell*)sender;
         
         NSString *title = resultCell.titleLabel.text;
         NSString *author = resultCell.authorLabel.text;
@@ -90,7 +90,7 @@
         detail.author = author;
         detail.summary = summary;
         
-        detailController.detailItem = detail;
+        detailController.xibVC.detailItem = detail;
     }
 }
 
