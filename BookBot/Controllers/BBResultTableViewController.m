@@ -139,7 +139,7 @@
     cell.authorLabel.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
     cell.descLabel.text = [book objectForKey:@"summary"];
     
-    NSURL *fullCoverUrl = [[book objectForKey:@"images"] objectForKey:(@"large")];
+    NSURL *fullCoverUrl = [NSURL URLWithString:[[book objectForKey:@"images"] objectForKey:(@"large")]];
     cell.fullCoverUrl = fullCoverUrl;
     
     [cell.coverImage setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];

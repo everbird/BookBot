@@ -29,7 +29,7 @@
 
 - (void)configureView
 {
-    self.navigationItem.title = @"详细信息";
+    self.navigationController.navigationItem.title = @"详细信息";
     if (self.detailItem) {
         self.titleField.text = self.detailItem.title;
         self.authorsLabel.text = self.detailItem.author;
@@ -37,7 +37,7 @@
         
         //self.coverView.image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:self.detailItem.fullCoverUrl]];
         
-        [self.coverView setImageWithURL:[NSURL URLWithString:self.detailItem.fullCoverUrl]
+        [self.coverView setImageWithURL:self.detailItem.fullCoverUrl
                        placeholderImage:[UIImage imageNamed:@"Default.png"]];
     }
 }
