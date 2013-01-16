@@ -56,6 +56,7 @@
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
 }
 
 - (void)didReceiveMemoryWarning
@@ -260,7 +261,6 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
 
 - (void)viewDidUnload {
     [self setSearchBar:nil];
-    [self setLogoImageView:nil];
     [self setSpeechButton:nil];
     [super viewDidUnload];
 }
