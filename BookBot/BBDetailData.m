@@ -10,12 +10,12 @@
 
 @implementation BBDetailData
 
-- (id)initWithTitle:(NSString *)title author:(NSString *)author summary:(NSString *)summary fullCover:(UIImage *)fullCover {
+- (id)initWithTitle:(NSString *)title author:(NSString *)author summary:(NSString *)summary fullCoverUrl:(NSURL *)fullCoverUrl {
     if ((self = [super init])) {
         self.title = title;
         self.author = author;
         self.summary = summary;
-        self.fullCover = fullCover;
+        self.fullCoverUrl = fullCoverUrl;
     }
     return self;
 }

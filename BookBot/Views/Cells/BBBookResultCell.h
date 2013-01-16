@@ -10,6 +10,7 @@
 
 @interface BBBookResultCell : UITableViewCell
 
+@property (strong, nonatomic) NSURL *fullCoverUrl;
 @property (strong, nonatomic) IBOutlet UIImageView *coverImage;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
