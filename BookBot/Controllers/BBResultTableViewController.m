@@ -83,12 +83,13 @@
         NSString *title = resultCell.titleLabel.text;
         NSString *author = resultCell.authorLabel.text;
         NSString *summary= resultCell.descLabel.text;
-        
+        NSURL *fullCoverUrl = resultCell.fullCoverUrl;
         BBDetailData *detail = [[BBDetailData alloc] init];
         
         detail.title = title;
         detail.author = author;
         detail.summary = summary;
+        detail.fullCoverUrl = fullCoverUrl;
         
         detailController.xibVC.detailItem = detail;
     }
@@ -137,6 +138,10 @@
     cell.titleLabel.text = [book objectForKey:@"title"];
     cell.authorLabel.text = [[book objectForKey:@"author"] componentsJoinedByString:@", "];
     cell.descLabel.text = [book objectForKey:@"summary"];
+    
+    NSURL *fullCoverUrl = [[book objectForKey:@"images"] objectForKey:(@"large")];
+    cell.fullCoverUrl = fullCoverUrl;
+    
     [cell.coverImage setImageWithURL:[NSURL URLWithString:[book objectForKey:@"image"]] placeholderImage:[UIImage imageNamed:@"Default.png"]];
 
     [cell.descLabel sizeToFit];

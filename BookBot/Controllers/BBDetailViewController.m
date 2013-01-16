@@ -14,11 +14,17 @@
 
 @implementation BBDetailViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        _xibVC = [[BBXibDetailViewController alloc] initWithNibName:@"BBXibDetailViewController" bundle:nil];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _xibVC = [[BBXibDetailViewController alloc] initWithNibName:@"BBXibDetailViewController" bundle:nil];
     [_scrollView addSubview:_xibVC.view];
     _scrollView.contentSize = _xibVC.view.bounds.size;
 }

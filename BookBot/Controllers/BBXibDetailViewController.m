@@ -8,6 +8,8 @@
 
 
 #import "BBXibDetailViewController.h"
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface BBXibDetailViewController ()
 - (void)configureView;
@@ -31,8 +33,12 @@
     if (self.detailItem) {
         self.titleField.text = self.detailItem.title;
         self.authorsLabel.text = self.detailItem.author;
-        self.introView.text = self.detailItem.summary;
-        self.coverView.image = self.detailItem.fullCover;
+        self.summary.text = self.detailItem.summary;
+        
+        //self.coverView.image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL:self.detailItem.fullCoverUrl]];
+        
+        [self.coverView setImageWithURL:[NSURL URLWithString:self.detailItem.fullCoverUrl]
+                       placeholderImage:[UIImage imageNamed:@"Default.png"]];
     }
 }
 
@@ -51,7 +57,7 @@
     [self setCoverView:nil];
     [self setTitleField:nil];
     [self setAuthorsLabel:nil];
-    [self setIntroView:nil];
+    [self setSummary:nil];
     [super viewDidUnload];
 }
 @end
