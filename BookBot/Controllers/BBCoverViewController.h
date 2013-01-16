@@ -10,7 +10,7 @@
 
 @interface BBCoverViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 
 @property (nonatomic) BOOL shown;
 

@@ -23,7 +23,6 @@
 
 @property (nonatomic, strong) IBOutlet UISearchDisplayController *uiSearchDisplayController;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (strong, nonatomic) IBOutlet UIButton *speechButton;
 
 - (IBAction)startRecording:(id)sender;

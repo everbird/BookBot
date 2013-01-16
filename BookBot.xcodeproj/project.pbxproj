@@ -13,6 +13,8 @@
 		620DBF021693E15C00FCFBC6 /* BBCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620DBF001693E15C00FCFBC6 /* BBCoverViewController.m */; };
 		620DBF031693E15C00FCFBC6 /* BBCoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620DBF011693E15C00FCFBC6 /* BBCoverViewController.xib */; };
 		620E19AA168AE7F400A97687 /* BBDemoContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */; };
+		62756B1916A68D2F00B0BD42 /* speech.png in Resources */ = {isa = PBXBuildFile; fileRef = 62756B1716A68D2F00B0BD42 /* speech.png */; };
+		62756B1A16A68D2F00B0BD42 /* speech@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62756B1816A68D2F00B0BD42 /* speech@2x.png */; };
 		628B0C8F1691E63200FD52EA /* CALevelMeter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C221691E63200FD52EA /* CALevelMeter.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		628B0C901691E63200FD52EA /* flac_encoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C231691E63200FD52EA /* flac_encoder.c */; };
 		628B0C911691E63200FD52EA /* GLLevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 628B0C251691E63200FD52EA /* GLLevelMeter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -77,6 +79,8 @@
 		620DBF011693E15C00FCFBC6 /* BBCoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBCoverViewController.xib; sourceTree = "<group>"; };
 		620E19A8168AE7F400A97687 /* BBDemoContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoContainerViewController.h; sourceTree = "<group>"; };
 		620E19A9168AE7F400A97687 /* BBDemoContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoContainerViewController.m; sourceTree = "<group>"; };
+		62756B1716A68D2F00B0BD42 /* speech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speech.png; sourceTree = "<group>"; };
+		62756B1816A68D2F00B0BD42 /* speech@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speech@2x.png"; sourceTree = "<group>"; };
 		628B0C211691E63200FD52EA /* CALevelMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALevelMeter.h; sourceTree = "<group>"; };
 		628B0C221691E63200FD52EA /* CALevelMeter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CALevelMeter.mm; sourceTree = "<group>"; };
 		628B0C231691E63200FD52EA /* flac_encoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = flac_encoder.c; sourceTree = "<group>"; };
@@ -308,6 +312,8 @@
 		62B2F51D1677094100D8D130 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62756B1716A68D2F00B0BD42 /* speech.png */,
+				62756B1816A68D2F00B0BD42 /* speech@2x.png */,
 				8813B6A016A47AEA00DDC781 /* Icon@2x.png */,
 				8813B69E16A47A4F00DDC781 /* Icon.png */,
 				620DBE921693D52400FCFBC6 /* lg_book@2x.png */,
@@ -451,6 +457,8 @@
 				8805ABBD16A3D283002D36AA /* BBXibDetailViewController.xib in Resources */,
 				8813B69F16A47A4F00DDC781 /* Icon.png in Resources */,
 				8813B6A116A47AEA00DDC781 /* Icon@2x.png in Resources */,
+				62756B1916A68D2F00B0BD42 /* speech.png in Resources */,
+				62756B1A16A68D2F00B0BD42 /* speech@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +608,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BookBot/BookBot-Prefix.pch";
 				INFOPLIST_FILE = "BookBot/BookBot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -613,7 +621,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BookBot/BookBot-Prefix.pch";
 				INFOPLIST_FILE = "BookBot/BookBot-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
