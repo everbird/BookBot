@@ -13,8 +13,8 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *summary;
-@property (strong, nonatomic) UIImage *fullCover;
+@property (strong, nonatomic) NSURL *fullCoverUrl;
 
-- (id)initWithTitle:(NSString *)title author:(NSString *)author summary:(NSString *)summary fullCover:(UIImage *)fullCover;
+- (id)initWithTitle:(NSString *)title author:(NSString *)author summary:(NSString *)summary fullCoverUrl:(NSURL *)fullCoverUrl;
 
 @end

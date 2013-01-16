@@ -19,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *coverView;
 @property (strong, nonatomic) IBOutlet UILabel *titleField;
 @property (strong, nonatomic) IBOutlet UILabel *authorsLabel;
-@property (weak, nonatomic) IBOutlet UITextView *introView;
+@property (strong, nonatomic) IBOutlet UITextView *summary;
 
 @end
