@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import <ZBarSDK/ZBarSDK.h>
 #import "ZZAudioRecorder.h"
 #import "ZZAudioRecorderDelegate.h"
 
 #import "BBCoverViewController.h"
 
-@interface BBViewController : UIViewController <ZZAudioRecorderDelegate>
+@interface BBViewController : UIViewController <ZZAudioRecorderDelegate, ZBarReaderDelegate>
 {
     NSMutableArray *searchHistory;
     NSArray *matchedHistory;
@@ -24,8 +25,10 @@
 @property (nonatomic, strong) IBOutlet UISearchDisplayController *uiSearchDisplayController;
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UIButton *speechButton;
+@property (weak, nonatomic) IBOutlet UIButton *scanButton;
 
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;
+- (IBAction)doScan:(id)sender;
 
 @end
