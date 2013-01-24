@@ -57,6 +57,12 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+    
+    UITapGestureRecognizer * tapRecognizer = [[UITapGestureRecognizer alloc]
+                                              initWithTarget:self action:@selector(textFieldResign)];
+    tapRecognizer.numberOfTapsRequired = 1;;
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer: tapRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -297,6 +303,11 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
         _searchBar.text = isbn;
         [self performSegueWithIdentifier:@"SearchToResult" sender:nil];
     }];
+}
+
+- (void)textFieldResign
+{
+    [_searchBar resignFirstResponder];
 }
 
 @end
