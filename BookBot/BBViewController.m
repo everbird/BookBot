@@ -57,6 +57,12 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+    
+    UITapGestureRecognizer * tapRecognizer = [[UITapGestureRecognizer alloc]
+                                              initWithTarget:self action:@selector(textFieldResign)];
+    tapRecognizer.numberOfTapsRequired = 1;;
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer: tapRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -262,6 +268,46 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
 - (void)viewDidUnload {
     [self setSearchBar:nil];
     [self setSpeechButton:nil];
+    [self setScanButton:nil];
     [super viewDidUnload];
 }
+
+#pragma mark - Actions
+
+- (IBAction)doScan:(id)sender {
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    ZBarImageScanner *scanner = reader.scanner;
+    [scanner setSymbology: ZBAR_I25
+				   config: ZBAR_CFG_ENABLE
+					   to: 0];
+    [self presentViewController:reader animated:YES completion:^{
+        // Do nothing        
+    }];
+}
+
+# pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController*)reader didFinishPickingMediaWithInfo:(NSDictionary*)info
+{
+    id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    for(symbol in results) {
+        break;
+    }
+    NSLog(@"===%@",symbol.data);
+    NSString* isbn = symbol.data;
+    [reader dismissViewControllerAnimated:YES completion:^{
+        // Do nothing
+        NSLog(@"isbn is %@", isbn);
+        _searchBar.text = isbn;
+        [self performSegueWithIdentifier:@"SearchToResult" sender:nil];
+    }];
+}
+
+- (void)textFieldResign
+{
+    [_searchBar resignFirstResponder];
+}
+
 @end
