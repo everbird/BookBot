@@ -284,12 +284,28 @@
                                     <action selector="doScan:" destination="2" eventType="touchUpInside" id="o2g-j6-TLc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B7N-b6-dlA">
+                                <rect key="frame" x="156" y="41" width="152" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="store.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doOpenStore:" destination="2" eventType="touchUpInside" id="ycw-se-TTR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gBc-af-i77"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="openStore" destination="B7N-b6-dlA" id="Qk0-RE-qZZ"/>
                         <outlet property="scanButton" destination="EED-VL-xGC" id="4oh-uR-zZC"/>
                         <outlet property="searchBar" destination="gNT-z2-eii" id="L1c-gC-9Au"/>
                         <outlet property="searchDisplayController" destination="pgc-Ys-vQz" id="diY-yX-HMR"/>
@@ -357,9 +373,9 @@
                                             <color key="textColor" red="0.55360478940217384" green="0.55360478940217384" blue="0.55360478940217384" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="summary" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZCE-nn-Ges">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="summary" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZCE-nn-Ges">
                                             <rect key="frame" x="91" y="65" width="189" height="58"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.16750169836956519" green="0.16750169836956519" blue="0.16750169836956519" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -453,6 +469,7 @@
     <resources>
         <image name="barcode_y.png" width="128" height="128"/>
         <image name="speech.png" width="80" height="80"/>
+        <image name="store.png" width="360" height="331"/>
     </resources>
     <classes>
         <class className="BBBookResultCell" superclassName="UITableViewCell">
@@ -515,9 +532,11 @@
         <class className="BBViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doOpenStore:"/>
                 <relationship kind="action" name="doScan:"/>
                 <relationship kind="action" name="startRecording:"/>
                 <relationship kind="action" name="stopRecording:"/>
+                <relationship kind="outlet" name="openStore" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scanButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
                 <relationship kind="outlet" name="speechButton" candidateClass="UIButton"/>

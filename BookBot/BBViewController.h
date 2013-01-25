@@ -30,5 +30,7 @@
 - (IBAction)startRecording:(id)sender;
 - (IBAction)stopRecording:(id)sender;
 - (IBAction)doScan:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *openStore;
+- (IBAction)doOpenStore:(id)sender;
 
 @end

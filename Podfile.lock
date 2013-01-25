@@ -4,6 +4,7 @@ PODS:
 - FTUtils (1.1.1)
 - JSONKit (1.5pre)
 - MBProgressHUD (0.5)
+- NVUIGradientButton (1.2.2)
 - ZBarSDK (1.3.1)
 
 DEPENDENCIES:
@@ -11,6 +12,7 @@ DEPENDENCIES:
 - FTUtils (~> 1.1.1)
 - JSONKit (~> 1.5pre)
 - MBProgressHUD (~> 0.5)
+- NVUIGradientButton (~> 1.2.2)
 - ZBarSDK (~> 1.3.1)
 
 SPEC CHECKSUMS:
@@ -18,6 +20,7 @@ SPEC CHECKSUMS:
   FTUtils: 7d4a9e255a9b0b1d0ec22f27d819862eb205c3bc
   JSONKit: 3d4708953ea7ae399a49777372d8b060a43ddd27
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
+  NVUIGradientButton: 504e478e4d98dff1371c5713a29236b3ff221b2c
   ZBarSDK: 42fdf42e8163a4f1732d67dbdc68a8f534bea754
 
-COCOAPODS: 0.16.0
+COCOAPODS: 0.16.1
