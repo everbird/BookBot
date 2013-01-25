@@ -14,6 +14,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <FTUtils/FTUtils.h>
 #import <JSONKit/JSONKit.h>
+#import "BBStoreViewController.h"
 
 @interface BBViewController ()
 {
@@ -269,6 +270,7 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
     [self setSearchBar:nil];
     [self setSpeechButton:nil];
     [self setScanButton:nil];
+    [self setOpenStore:nil];
     [super viewDidUnload];
 }
 
@@ -310,4 +312,8 @@ shouldReloadTableForSearchScope:(NSInteger)searchOption
     [_searchBar resignFirstResponder];
 }
 
+- (IBAction)doOpenStore:(id)sender {
+    BBStoreViewController* webVC = [[BBStoreViewController alloc] initWithNibName:@"BBStoreViewController" bundle:nil];
+    [self presentModalViewController:webVC animated:YES];
+}
 @end

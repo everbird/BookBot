@@ -8,6 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import <NVUIGradientButton/NVUIGradientButton.h>
 #import "BBDetailData.h"
 
 @class BBDetailData;
@@ -20,5 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleField;
 @property (strong, nonatomic) IBOutlet UILabel *authorsLabel;
 @property (strong, nonatomic) IBOutlet UITextView *summary;
+@property (weak, nonatomic) IBOutlet NVUIGradientButton *browseButton;
+- (IBAction)doBrowse:(id)sender;
 
 @end

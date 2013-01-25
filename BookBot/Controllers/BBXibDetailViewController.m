@@ -11,6 +11,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
+#import "BBWebContainerViewController.h"
+
 @interface BBXibDetailViewController ()
 - (void)configureView;
 @end
@@ -40,6 +42,12 @@
         [self.coverView setImageWithURL:self.detailItem.fullCoverUrl
                        placeholderImage:[UIImage imageNamed:@"Default.png"]];
     }
+    
+    _browseButton.text = @"打开试读";
+    _browseButton.textColor = [UIColor whiteColor];
+    _browseButton.textShadowColor = [UIColor darkGrayColor];
+    _browseButton.tintColor = [UIColor colorWithRed:0 green:(CGFloat)120/255 blue:0 alpha:1];
+    _browseButton.highlightedTintColor = [UIColor colorWithRed:0 green:(CGFloat)190/255 blue:0 alpha:1];
 }
 
 - (void)viewDidLoad
@@ -58,6 +66,12 @@
     [self setTitleField:nil];
     [self setAuthorsLabel:nil];
     [self setSummary:nil];
+    [self setBrowseButton:nil];
     [super viewDidUnload];
+}
+
+- (IBAction)doBrowse:(id)sender {
+    BBWebContainerViewController* webVC = [[BBWebContainerViewController alloc] initWithNibName:@"BBWebContainerViewController" bundle:nil];
+    [self presentModalViewController:webVC animated:YES];
 }
 @end
